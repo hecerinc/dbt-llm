@@ -1,17 +1,21 @@
 import os
 import logging
 from dotenv import load_dotenv
-# from datetime import datetime
+from datetime import datetime
 # import pandas as pd
 # import numpy as np
 
-from openai import AzureOpenAI, OpenAI
+from openai import AzureOpenAI
 from azureml.core import Workspace, Dataset
 import tiktoken
 
 load_dotenv('.env')
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', None)
+ENVIRONMENT = os.getenv('ENVIRONMENT', 'DEVELOPMENT')
+
+pipeline_run_time_utc = datetime.utcnow()
+run_id = pipeline_run_time_utc.strftime('%Y%m%dT%H%M%S')
 
 assert OPENAI_API_KEY is not None, 'OpenAI API Key must be present in env variables'
 
@@ -25,29 +29,24 @@ subscription_id = '8048e16e-5368-4d28-8d68-657559f557e7'
 resource_group = 'dbt-rg-openai'
 workspace_name = 'berkeley_dbt'
 
-workspace = Workspace(subscription_id, resource_group, workspace_name)
+if ENVIRONMENT != 'LOCAL':
+    workspace = Workspace(subscription_id, resource_group, workspace_name)
 
-personas = Dataset.get_by_name(workspace, name='PersonaPrompts2')
-personas_df = personas.to_pandas_dataframe()
+    personas = Dataset.get_by_name(workspace, name='PersonaPrompts2')
+    personas_df = personas.to_pandas_dataframe()
 
-evaluation_prompts = Dataset.get_by_name(workspace, name='EvaluationPromptsChecklistComplete')
-evaluation_prompts = evaluation_prompts.to_pandas_dataframe()
-# evaluation_prompts
-# personas_df
+    evaluation_prompts = Dataset.get_by_name(workspace, name='EvaluationPromptsChecklistComplete')
+    evaluation_prompts = evaluation_prompts.to_pandas_dataframe()
 
 # User Inputs
 
 with open(os.path.join('../prompts', 'dbt_system.prompt'), 'r', encoding='utf-8') as f:
     dbt_system_prompt = f.read()
 
-with open(os.path.join('../prompts', 'persona_user.prompt'), 'r', encoding='utf-8') as f:
+with open(os.path.join('../prompts', 'user_impersonation.prompt'), 'r', encoding='utf-8') as f:
     persona_prompt = f.read()
 
-with open(os.path.join('../prompts', 'persona_system.prompt'), 'r', encoding='utf-8') as f:
-    persona_system_prompt = f.read()
-
-
-persona_init_msg = 'My wife recently divorced me. She had been been cheating on me and just recently talked to me about it and told me she wasn\'t happy in our marriage anymore. I had also recently been diagnosed with a form of cancer and now I\'m facing that completely alone. It feels as if the world hates me.'
+initial_prompt_persona = "I have been wanting to put myself out there more so I've been trying to meet up with friends that I have been neglecting. I try to prepare some talking points to that the conversation doesn't lag and I can appear interested, but I often leave feeling like the conversation was forced and not authentic."
 
 class SimThread:
     def __init__(
@@ -128,26 +127,6 @@ class SimThread:
             return self.dbt_info
         return self.persona_info
 
-    def get_msgs_from_pov(self, agent:str):
-        agent_system_prompt = self.get_agent_info(agent).get('system_prompt')
-        pov_msgs = []
-        dummy_msg = []
-        sys_msg = []
-
-        for msg in self.thread_msgs:
-            if msg['role'] == agent:
-                pov_role = 'assistant'
-            else:
-                pov_role = 'user'
-            pov_msgs.append({'role': pov_role, 'content': msg['content']})
-
-        if not pov_msgs or (pov_msgs and pov_msgs[0]['role'] == 'assistant'):
-            dummy_msg = [{'role': 'user', 'content': ''}]
-
-        if agent_system_prompt:
-            sys_msg = [{'role': 'system', 'content': agent_system_prompt}]
-
-        return [*sys_msg, *dummy_msg, *pov_msgs]
 
     def _switch_responder(self):
         if self.next_to_respond == 'dbt':
@@ -184,10 +163,31 @@ class SimThread:
     def msgs_to_eval(self):
         return '\n\n'.join([self.msg_to_eval(msg) for msg in self.thread_msgs])
 
+    def get_msgs_from_pov(self, agent:str):
+        agent_system_prompt = self.get_agent_info(agent).get('system_prompt')
+        pov_msgs = []
+        dummy_msg = []
+        sys_msg = []
+
+        for msg in self.thread_msgs:
+            if msg['role'] == agent:
+                pov_role = 'assistant'
+            else:
+                pov_role = 'user'
+            pov_msgs.append({'role': pov_role, 'content': msg['content']})
+
+        if not pov_msgs or (pov_msgs and pov_msgs[0]['role'] == 'assistant'):
+            dummy_msg = [{'role': 'user', 'content': ''}]
+
+        if agent_system_prompt:
+            sys_msg = [{'role': 'system', 'content': agent_system_prompt}]
+
+        return [*sys_msg, *dummy_msg, *pov_msgs]
+
     def next_response(self):
         agent_info = self.get_agent_info(self.next_to_respond)
 
-        if agent_info.get('init_msg') and agent_info['messages'] == 0:
+        if agent_info.get('init_msg') and agent_info['n_msgs'] == 0:
             msg_txt = agent_info['init_msg']
             msg = {'role': self.next_to_respond, 'content': msg_txt}
             self.thread_msgs.append(msg)
@@ -229,10 +229,15 @@ class SimThread:
         for i in range(n_msgs):
             self._vprint_msg(self.next_response(), verbose)
 
-st = SimThread(openai_client, dbt_system_prompt, None, persona_prompt, None, 'dbt', 10, 10000)
+st = SimThread(openai_client, dbt_system_prompt, None, persona_prompt, initial_prompt_persona, 'dbt', 10, 10000)
 st.run_thread(verbose=True)
 
 st.extend_thread(4, verbose=True)
-print(st.msgs_to_console())
 st_eval_txt = st.msgs_to_eval() # this is what then gets passed to the evaluation prompt
-print(st_eval_txt)
+# print(st.msgs_to_console())
+# print(st_eval_txt)
+
+with open(f'{run_id}_result_console.txt', 'w', encoding='utf-8') as f:
+    print(st.msgs_to_console(), file=f)
+with open(f'{run_id}_result_eval.txt', 'w', encoding='utf-8') as f:
+    print(st_eval_txt, file=f)
