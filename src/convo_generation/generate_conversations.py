@@ -94,10 +94,18 @@ def main():
 
             elapsed_time = t_stop - t_start
 
+            dbt = st.get_agent_info('dbt')
+            persona = st.get_agent_info('persona')
+
             results[i] = {
                 'id': i+1,
-                'result': st,
+                'result': {
+                    'dbt': dbt,
+                    'persona': persona,
+                    'messages': st.thread_msgs
+                },
                 'prompt': initial_prompt,
+                'thread_stats': st.thread_stats,
                 'elapsed_time': elapsed_time
             }
 
