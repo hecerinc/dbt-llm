@@ -1,8 +1,15 @@
 import logging
+import sys, os
 
 from openai import AzureOpenAI
 # from azureml.core import Workspace, Dataset
 import tiktoken
+
+from utils.openai_api import get_openai_response_content
+
+sys.path.append(os.path.join(sys.path[0], '../..'))
+
+from utils.openai_api import get_openai_response_content
 
 # if ENVIRONMENT != 'LOCAL':
 #     workspace = Workspace(subscription_id, resource_group, workspace_name)
@@ -15,6 +22,7 @@ import tiktoken
 
 # User Inputs
 
+MODEL_DEPLOYMENT='gpt4-1106'
 
 class SimThread:
     def __init__(
@@ -165,7 +173,7 @@ class SimThread:
 
         else:
             response = self.client.chat.completions.create(
-                model="gpt4-1106",
+                model=MODEL_DEPLOYMENT,
                 messages=self.get_msgs_from_pov(self.next_to_respond)
             )
             msg_txt = response.choices[0].message.content
@@ -196,4 +204,5 @@ class SimThread:
         assert n_msgs > 0
         for i in range(n_msgs):
             self._vprint_msg(self.next_response(), verbose)
+
 
