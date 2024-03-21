@@ -1,28 +1,15 @@
 '''
 This class will be a base class for running steps in the validation pipeline.
+
 The main method that must be implemented is the `run_evaluation` method which takes:
 	- input: conversation
 	- output: a dict object (easier to serialize), with the evaluation result
 '''
 from abc import ABC, abstractmethod
 from typing import Dict
-from openai import AzureOpenAI
-from azureml.core import Workspace, Dataset
-import logging
-import pandas as pd
 
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s: %(message)s')
-logger = logging.getLogger('adherence_evaluation')
-logger.setLevel(logging.INFO)
 
-# Connect to OpenAI model
-client = AzureOpenAI(
-  api_key = "12858f5908ee4b17b986977b35d604dd",  
-  api_version = "2023-05-15",
-  azure_endpoint = "https://dbt-openai-usea2-assistants.openai.azure.com/"
-)
-
-class Evaluation:
+class Evaluation(ABC):
     @abstractmethod
     def run_evaluation(self, conversation: str) -> Dict:
         raise NotImplementedError()

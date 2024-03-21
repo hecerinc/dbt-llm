@@ -7,7 +7,7 @@ import tiktoken
 
 sys.path.append(os.path.join(sys.path[0], '../..'))
 
-from utils.openai_api import get_openai_response_content
+# from utils.openai_api import get_openai_response_content
 
 # if ENVIRONMENT != 'LOCAL':
 #     workspace = Workspace(subscription_id, resource_group, workspace_name)
@@ -20,7 +20,8 @@ from utils.openai_api import get_openai_response_content
 
 # User Inputs
 
-MODEL_DEPLOYMENT='gpt4-1106'
+# MODEL_DEPLOYMENT='gpt4-1106'
+MODEL_DEPLOYMENT='gpt-4-32k'
 
 class SimThread:
     def __init__(
