@@ -50,8 +50,8 @@ class SimThread:
         self.dbt_info.update(self._init_stats())
         self.persona_info.update(self._init_stats())
         self.agent_name_map = {
-            'dbt':     {'console': '___BerkeleyDBT___', 'eval': 'T'},
-            'persona': {'console': '___  Persona  ___', 'eval': 'C'},
+            'dbt':     {'console': '___BerkeleyDBT___', 'eval': 'Therapist'},
+            'persona': {'console': '___  Persona  ___', 'eval': 'Client'},
         }
 
         self.thread_msgs = []
