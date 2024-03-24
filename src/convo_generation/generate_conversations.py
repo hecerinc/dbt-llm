@@ -25,7 +25,7 @@ DEBUG = True if DEBUG.lower() == 'true' else False
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-f', '--prompt-file', required=True)
+parser.add_argument('-f', '--prompt-file', required=False) # ROB NOTE: NOT REQUIRED - HARDCODED PROMPT FILE TO SEED PROMPTS
 
 
 args = parser.parse_args()
