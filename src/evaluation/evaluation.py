@@ -33,14 +33,16 @@ class AdherenceEvaluation(Evaluation):
         self.number_iterations = number_iterations
 
         # Get evaluation dataset
-        subscription_id = '8048e16e-5368-4d28-8d68-657559f557e7'
-        resource_group = 'dbt-rg-openai'
-        workspace_name = 'berkeley_dbt'
+        # subscription_id = '8048e16e-5368-4d28-8d68-657559f557e7'
+        # resource_group = 'dbt-rg-openai'
+        # workspace_name = 'berkeley_dbt'
 
-        workspace = Workspace(subscription_id, resource_group, workspace_name)
+        # workspace = Workspace(subscription_id, resource_group, workspace_name)
 
-        dataset = Dataset.get_by_name(workspace, name='EvaluationPromptsChecklistComplete')
-        self.checklist_df = dataset.to_pandas_dataframe()
+        # dataset = Dataset.get_by_name(workspace, name='EvaluationPromptsChecklistComplete')
+        # self.checklist_df = dataset.to_pandas_dataframe()
+
+	self.checklist_df = pd.read_csv('../data/Evaluation Prompts.tsv', delimeter = '\t')
 
         # standard = dataset['Standard']
         # standard_prompts = dataset['System Prompt']
