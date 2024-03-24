@@ -73,7 +73,7 @@ def main():
     # Get the input prompts
     logger.info('Reading unique prompts')
 
-    seed_prompts = pd.read_csv('../src/data/Prompt to Skill Pairs.tsv', delimiter='\t')
+    seed_prompts = pd.read_csv('../data/Prompt to Skill Pairs.tsv', delimiter='\t')
     seed_prompts = list(seed_prompts['Initial Message'])[:3] #FROM ROB: NEED TO CHANGE THIS TO CONTROL FOR NUMBER OF CONVERSATIONS WITH SOME CLASS
 
     if not seed_prompts:
