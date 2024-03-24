@@ -71,8 +71,9 @@ def simulate_conversation(initial_prompt: str):
 def main():
     # Get the input prompts
     logger.info('Reading unique prompts')
-    with open(uprompt_file, 'r', encoding='utf-8') as f:
-        seed_prompts = f.readlines()
+
+    seed_prompts = pd.read_csv('../data/src/data/Prompt to Skill Pairs.tsv', delimiter='\t')
+    seed_prompts = list(seed_prompts['Initial Message'])[:3] -- FROM ROB: NEED TO CHANGE THIS TO CONTROL FOR NUMBER OF CONVERSATIONS WITH SOME CLASS
 
     if not seed_prompts:
         print('ERROR: no seed prompts found. Exiting.', file=sys.stderr)
