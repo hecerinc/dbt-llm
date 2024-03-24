@@ -5,8 +5,6 @@ from openai import AzureOpenAI
 # from azureml.core import Workspace, Dataset
 import tiktoken
 
-from utils.openai_api import get_openai_response_content
-
 sys.path.append(os.path.join(sys.path[0], '../..'))
 
 from utils.openai_api import get_openai_response_content
