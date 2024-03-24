@@ -27,9 +27,9 @@ class SimThread:
             self,
             client: AzureOpenAI,
             dbt_system_prompt: str = '',
-            dbt_initial_msg: str | None = None,
+            dbt_initial_msg: str, # | None = None
             persona_system_prompt: str = '',
-            persona_initial_msg: str | None = None,
+            persona_initial_msg: str, # | None = None
             initiator: str = 'dbt',
             thread_msg_limit: int = 10,
             thread_token_length_limit: int = 10000,
