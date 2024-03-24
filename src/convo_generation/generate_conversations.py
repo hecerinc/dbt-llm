@@ -11,15 +11,15 @@ sys.path.append(os.path.join(sys.path[0], '../..'))
 from openai import AzureOpenAI
 from convo_generation.sim_thread import SimThread
 
-load_dotenv('.env')
+#load_dotenv('.env')
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s: %(message)s')
 logger = logging.getLogger('generate_conversation')
 logger.setLevel(logging.INFO)
 
 
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', None)
-ENVIRONMENT = os.getenv('ENVIRONMENT', 'DEVELOPMENT')
-DEBUG = os.getenv('DEBUG', 'false')
+#OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', None)
+#ENVIRONMENT = os.getenv('ENVIRONMENT', 'DEVELOPMENT')
+#DEBUG = os.getenv('DEBUG', 'false')
 
 DEBUG = True if DEBUG.lower() == 'true' else False
 
