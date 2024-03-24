@@ -103,7 +103,8 @@ def main():
                 'result': {
                     'dbt': dbt,
                     'persona': persona,
-                    'messages': st.thread_msgs
+                    'messages': st.thread_msgs,
+                    'eval_messages': st.msgs_to_eval()
                 },
                 'prompt': initial_prompt,
                 'thread_stats': st.thread_stats,
