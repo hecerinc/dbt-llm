@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 import time
 import argparse
+import pandas as pd
 
 sys.path.append(os.path.join(sys.path[0], '..'))
 sys.path.append(os.path.join(sys.path[0], '../..'))
