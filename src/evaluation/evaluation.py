@@ -31,6 +31,8 @@ class AdherenceEvaluation(Evaluation):
     def __init__(self, number_iterations):
         #self.dataset = dataset
         self.number_iterations = number_iterations
+    	self.checklist_df = pd.read_csv('../data/Evaluation Prompts.tsv', delimiter = '\t')
+
 
         # Get evaluation dataset
         # subscription_id = '8048e16e-5368-4d28-8d68-657559f557e7'
@@ -41,7 +43,6 @@ class AdherenceEvaluation(Evaluation):
 
         # dataset = Dataset.get_by_name(workspace, name='EvaluationPromptsChecklistComplete')
         # self.checklist_df = dataset.to_pandas_dataframe()
-	self.checklist_df = pd.read_csv('../data/Evaluation Prompts.tsv', delimiter = '\t')
 
         # standard = dataset['Standard']
         # standard_prompts = dataset['System Prompt']
