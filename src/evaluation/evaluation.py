@@ -30,7 +30,7 @@ class AdherenceEvaluation(Evaluation):
 
     def __init__(self, number_iterations):
         #self.dataset = dataset
-        self.number_iterations = number_iterations
+    	self.number_iterations = number_iterations
     	self.checklist_df = pd.read_csv('../data/Evaluation Prompts.tsv', delimiter = '\t')
 
 
