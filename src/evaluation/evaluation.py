@@ -9,6 +9,7 @@ from typing import Dict
 from openai import AzureOpenAI
 from azureml.core import Workspace, Dataset
 import logging
+import pandas as pd
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s: %(message)s')
 logger = logging.getLogger('adherence_evaluation')
