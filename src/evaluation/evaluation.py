@@ -42,7 +42,7 @@ class AdherenceEvaluation(Evaluation):
         # dataset = Dataset.get_by_name(workspace, name='EvaluationPromptsChecklistComplete')
         # self.checklist_df = dataset.to_pandas_dataframe()
 
-	self.checklist_df = pd.read_csv('../data/Evaluation Prompts.tsv', delimeter = '\t')
+	self.checklist_df = pd.read_csv('../data/Evaluation Prompts.tsv', delimiter = '\t')
 
         # standard = dataset['Standard']
         # standard_prompts = dataset['System Prompt']
