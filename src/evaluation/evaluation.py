@@ -10,7 +10,6 @@ from openai import AzureOpenAI
 from azureml.core import Workspace, Dataset
 import logging
 import pandas as pd
-from dbt-llm.src.utils.openai_api import get_openai_response_content
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s: %(message)s')
 logger = logging.getLogger('adherence_evaluation')
