@@ -28,10 +28,16 @@ DEBUG = True if DEBUG.lower() == 'true' else False
 parser = argparse.ArgumentParser()
 parser.add_argument('-f', '--prompt-file', required=False) # ROB NOTE: NOT REQUIRED - HARDCODED PROMPT FILE TO SEED PROMPTS
 
+# For testing, limit the # of conversations generated
+parser.add_argument('-l', '--limit', required=False)
+parser.add_argument('-o', '--output', required=False, default='result.pickle')
+
 
 args = parser.parse_args()
 
 uprompt_file = args.prompt_file
+outfile = args.output
+convo_limit = int(args.limit) if args.limit else None
 
 pipeline_run_time_utc = datetime.utcnow()
 run_id = pipeline_run_time_utc.strftime('%Y%m%dT%H%M%S')
@@ -40,7 +46,7 @@ CONVERSATION_MESSAGE_LIMIT = 10
 
 assert OPENAI_API_KEY is not None, 'OpenAI API Key must be present in env variables'
 
-oai_endpoint = 'dbt-openai-usea2-assistants'
+oai_endpoint = os.getenv('OAI_ENDPOINT', 'dbt-openai-usea2-assistants')
 
 # Connect to OpenAI model
 openai_client = AzureOpenAI(
@@ -73,11 +79,15 @@ def main():
     # Get the input prompts
     logger.info('Reading unique prompts')
 
-    seed_prompts = pd.read_csv('../data/Prompt to Skill Pairs.tsv', delimiter='\t')
-    seed_prompts = list(seed_prompts['Initial Message'])[:3] #FROM ROB: NEED TO CHANGE THIS TO CONTROL FOR NUMBER OF CONVERSATIONS WITH SOME CLASS
+    seed_prompts = pd.read_csv('../data/prompts_2.tsv', delimiter='\t')
+    convo_ids = list(seed_prompts['id'])
+    seed_prompts = list(seed_prompts['Initial Message'])
+
+    if convo_limit:
+        seed_prompts = seed_prompts[:convo_limit]
 
     if not seed_prompts:
-        print('ERROR: no seed prompts found. Exiting.', file=sys.stderr)
+        logger.exception('No seed prompts found. Exiting.')
         sys.exit(1)
 
     logger.info(f'Read {len(seed_prompts)} unique prompts.')
@@ -88,7 +98,8 @@ def main():
         try:
 
             initial_prompt = initial_prompt.strip()
-            logger.info(f'Running prompt {i+1}')
+            convo_id = convo_ids[i]
+            logger.info(f'Running prompt {convo_id}')
 
             t_start = time.perf_counter()
             st = simulate_conversation(initial_prompt)
@@ -99,8 +110,8 @@ def main():
             dbt = st.get_agent_info('dbt')
             persona = st.get_agent_info('persona')
 
-            results[i] = {
-                'id': i+1,
+            results[convo_id] = {
+                'id': convo_id,
                 'result': {
                     'dbt': dbt,
                     'persona': persona,
@@ -123,8 +134,9 @@ def main():
         # with open(f'{run_id}_result_eval.txt', 'w', encoding='utf-8') as f:
         #     print(st_eval_txt, file=f)
 
-    with open('result.pickle', 'wb') as f:
+    with open(outfile, 'wb') as f:
         pickle.dump(results, f)
+    logger.info('Done')
 # print(st.msgs_to_console())
 # print(st_eval_txt)
 
