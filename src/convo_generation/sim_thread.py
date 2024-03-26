@@ -20,8 +20,7 @@ sys.path.append(os.path.join(sys.path[0], '../..'))
 
 # User Inputs
 
-# MODEL_DEPLOYMENT='gpt4-1106'
-MODEL_DEPLOYMENT='gpt-4-32k'
+MODEL_DEPLOYMENT = os.getenv('MODEL_DEPLOYMENT', 'gpt4-1106')
 
 class SimThread:
     def __init__(
