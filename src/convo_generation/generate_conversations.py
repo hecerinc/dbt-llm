@@ -6,6 +6,7 @@ from datetime import datetime
 import time
 import argparse
 import pandas as pd
+from uuid import uuid4
 
 sys.path.append(os.path.join(sys.path[0], '..'))
 sys.path.append(os.path.join(sys.path[0], '../..'))
@@ -98,9 +99,10 @@ def main():
 
             dbt = st.get_agent_info('dbt')
             persona = st.get_agent_info('persona')
+            convo_id = uuid4()
 
-            results[i] = {
-                'id': i+1,
+            results[convo_id] = {
+                'id': convo_id,
                 'result': {
                     'dbt': dbt,
                     'persona': persona,
