@@ -9,6 +9,7 @@ from abc import ABC, abstractmethod
 from typing import Dict
 
 class Evaluation(ABC):
+    name: str = ''
     @abstractmethod
     def run_evaluation(self, conversation: str) -> Dict:
         raise NotImplementedError()

@@ -11,25 +11,30 @@ logger.setLevel(logging.INFO)
 sys.path.append(os.path.join(sys.path[0], '..'))
 sys.path.append(os.path.join(sys.path[0], '../..'))
 
-from evaluation.evaluation import Evaluation
+from .evaluation import Evaluation
 from utils.openai_api import get_openai_response_content
 
 load_dotenv('.env')
+
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', None)
 OAI_ENDPOINT = os.getenv('OAI_ENDPOINT', None)
-MODEL_DEPLOYMENT = os.getenv('MODEL_DEPLOYMENT', None)
+MODEL_DEPLOYMENT = os.getenv('MODEL_DEPLOYMENT', 'gpt4-1106')
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 class AdherenceEvaluation(Evaluation):
+
+    name = 'Adherence'
 
     def __init__(self, number_iterations):
         #self.dataset = dataset
         self.number_iterations = number_iterations
-        self.checklist_df = pd.read_csv('../data/Evaluation Prompts.tsv', delimiter = '\t')
+        eval_prompts_path = os.path.join(dir_path, '../data/Evaluation Prompts.tsv')
+        self.checklist_df = pd.read_csv(eval_prompts_path, delimiter = '\t')
         self.openai_client = AzureOpenAI(
                 api_key = OPENAI_API_KEY,
                 api_version = "2023-05-15",
-                azure_endpoint = "https://{OAI_ENDPOINT}.openai.azure.com/"
+                azure_endpoint = f"https://{OAI_ENDPOINT}.openai.azure.com/"
                 )
 
 
@@ -55,13 +60,28 @@ class AdherenceEvaluation(Evaluation):
         adherence_checklist = {}
 
 
+        n_criterion = len(self.checklist_df)
+        i = 0
         for _i, row in self.checklist_df.iterrows():
             # call each prompt on each conversation
+            criterion_name = row['Standard']
+            logger.info(f'Running criterion: {criterion_name} ({int(i)+1}/{n_criterion})')
             messages = [
                     {"role": "system", "content": row['System Prompt']},
                     {"role": "user", "content": conversation}
                     ]
-            adherence_checklist[row['Standard']] = int(get_openai_response_content(self.openai_client, messages, MODEL_DEPLOYMENT))
+            # result = get_openai_response_content(self.openai_client, messages, MODEL_DEPLOYMENT)
+
+            response = self.openai_client.chat.completions.create(
+                model=MODEL_DEPLOYMENT,
+                messages=messages
+            )
+            msg_txt = response.choices[0].message.content
+            if msg_txt is None:
+                logger.error('Empty msg_txt', msg_txt)
+            # print(msg_txt)
+            adherence_checklist[criterion_name] = int(msg_txt) if msg_txt is not None else msg_txt
+            i += 1
 
 
         return adherence_checklist

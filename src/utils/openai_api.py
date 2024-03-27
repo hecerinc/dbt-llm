@@ -13,6 +13,7 @@ def get_openai_response(client: AzureOpenAI, messages, model: str):
         messages=messages
     )
 
+    print('OPENAI', response)
     return response
 
 def get_openai_response_content(client: AzureOpenAI, messages, model: str):
