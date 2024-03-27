@@ -16,6 +16,8 @@ from utils.openai_api import get_openai_response_content
 
 load_dotenv('.env')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', None)
+OAI_ENDPOINT = os.getenv('OAI_ENDPOINT', None)
+MODEL_DEPLOYMENT = os.getenv('MODEL_DEPLOYMENT', None)
 
 
 class AdherenceEvaluation(Evaluation):
@@ -27,7 +29,7 @@ class AdherenceEvaluation(Evaluation):
         self.openai_client = AzureOpenAI(
                 api_key = OPENAI_API_KEY,
                 api_version = "2023-05-15",
-                azure_endpoint = "https://dbt-openai-usea2-assistants.openai.azure.com/"
+                azure_endpoint = "https://{OAI_ENDPOINT}.openai.azure.com/"
                 )
 
 
@@ -52,7 +54,6 @@ class AdherenceEvaluation(Evaluation):
 
         adherence_checklist = {}
 
-        model = 'gpt4-1106'
 
         for _i, row in self.checklist_df.iterrows():
             # call each prompt on each conversation
@@ -60,7 +61,7 @@ class AdherenceEvaluation(Evaluation):
                     {"role": "system", "content": row['System Prompt']},
                     {"role": "user", "content": conversation}
                     ]
-            adherence_checklist[row['Standard']] = int(get_openai_response_content(self.openai_client, messages, model))
+            adherence_checklist[row['Standard']] = int(get_openai_response_content(self.openai_client, messages, MODEL_DEPLOYMENT))
 
 
         return adherence_checklist
