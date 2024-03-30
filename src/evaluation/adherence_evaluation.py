@@ -27,6 +27,9 @@ class AdherenceEvaluation(Evaluation):
     name = 'Adherence'
 
     def __init__(self, number_iterations):
+        OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', None)
+        OAI_ENDPOINT = os.getenv('OAI_ENDPOINT', None)
+        MODEL_DEPLOYMENT = os.getenv('MODEL_DEPLOYMENT', 'gpt4-1106')
         #self.dataset = dataset
         self.number_iterations = number_iterations
         eval_prompts_path = os.path.join(dir_path, '../data/Evaluation Prompts.tsv')

@@ -40,7 +40,7 @@ def get_evaluation_steps() -> List[Evaluation]:
     '''
     This is where we would put the different evaluation steps
     '''
-    return [AdherenceEvaluation(1)]
+    return [AdherenceEvaluation(5)]
 
 
 
@@ -54,8 +54,10 @@ def run_evaluations(input_path: str, output_path: str):
 
     evaluation_results: List[Dict] = []
 
+    n_convos = len(conversation_df)
 
     for _i, row in conversation_df.iterrows():
+        logger.info(f'Running conversation: ({int(_i)+1}/{n_convos})')
         convo = str(row['conversation'])
         convo_id = row['conversation_id']
         for evstep in evaluation_steps:
