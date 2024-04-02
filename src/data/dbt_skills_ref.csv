@@ -1,0 +1,181 @@
+skill_id,skill_name,module_focus,module_name,category_name,skill_desc,use_regex
+M1,Wise Mind,Acceptance,Mindfulness,,"- The ""Wise Mind"" skill in the Mindfulness module of DBT refers to a state of mind where an individual integrates both rational thought (Reasonable Mind) and emotional experience (Emotion Mind) to make balanced and effective decisions.
+- It is considered a core concept in DBT, representing an inner knowledge and intuition that everyone possesses, which can guide them to a sense of truth and balanced action.
+- In practice, this skill involves recognizing when one is operating from either the Reasonable Mind or the Emotion Mind and then working towards achieving a synthesis of the two, which is the Wise Mind.
+- During a session, it might be identified by the therapist asking the client to reflect on a situation and consider what their emotions, reason, and intuition are telling them, aiming to find a middle path that incorporates all aspects.",TRUE
+M2,Observe,Acceptance,Mindfulness,"Mindfulness ""What"" Skills","- The ""Observe"" skill in the Mindfulness module of DBT involves paying attention to events, emotions, and behaviors as they occur, without trying to change them.
+- It teaches participants to experience the present moment with awareness, whether the sensations are painful or pleasant, without immediately reacting or trying to alter the experience.
+- This skill emphasizes the distinction between participating in an activity and being an observer of that activity, such as the difference between walking and observing oneself walk.
+- It is often identified in a session by the therapist encouraging the client to notice their thoughts, feelings, or bodily sensations without engaging with them or attempting to modify them.",TRUE
+M3,Describe,Acceptance,Mindfulness,"Mindfulness ""What"" Skills","- The ""Describe"" skill in the Mindfulness module of DBT involves putting words to experiences, including emotions, thoughts, and environmental events.
+- It requires distinguishing between one's emotional responses and the actual events that trigger these emotions, helping to prevent the conflation of feelings with facts.
+- This skill aids in communication and self-control by encouraging individuals to describe their internal experiences accurately without jumping to conclusions or making assumptions.
+- In a session, it might be identified by a therapist asking a client to verbally describe what they are feeling or thinking in a specific moment without attaching judgment or interpretations to those descriptions.",TRUE
+M4,Participate,Acceptance,Mindfulness,"Mindfulness ""What"" Skills","- The ""Participate"" skill in the Mindfulness module of DBT involves fully engaging in the present activity without self-consciousness or separation from the moment.
+- It is characterized by a spontaneous and smooth interaction with the environment, often based on habit, but done with awareness and attention.
+- Mindful participating is contrasted with mindless participating, where the former includes alertness and awareness during the activity, while the latter involves a lack of attention to the task at hand.
+- In a session, this skill might be identified by the therapist discussing how a client can become fully immersed in an activity, like a skilled athlete in a game, without overthinking or detaching from the experience.",TRUE
+M5,Nonjudgmentally,Acceptance,Mindfulness,"Mindfulness ""How"" Skills","- The ""Nonjudgmentally"" skill in the Mindfulness module of DBT emphasizes observing and describing events and behaviors without labeling them as good or bad.
+- It encourages individuals to focus on the consequences of actions rather than assigning moral value to them, which can lead to a more objective and less emotionally charged perspective.
+- This skill is crucial for reducing the emotional intensity that can come from harsh self-criticism or the criticism of others, by promoting a more accepting and compassionate viewpoint.
+- In a session, this skill might be identified when a therapist corrects a client who is labeling themselves or others with terms like ""stupid"" or ""bad,"" and instead guides them to describe the facts of the situation and its consequences without judgment.",TRUE
+M6,One-Mindfully,Acceptance,Mindfulness,"Mindfulness ""How"" Skills","- The ""One-Mindfully"" skill in the Mindfulness module of DBT emphasizes doing one thing at a time with full attention.
+- It involves concentrating on the present activity without distraction from other tasks or intrusive thoughts about the past or future.
+- This skill is designed to help individuals gain control over their attention and become fully engaged and aware of what they are doing in the moment.
+- In a session, it might be identified by the therapist asking the client to focus solely on the conversation or activity at hand, without multitasking or letting their mind wander.",TRUE
+M7,Effectively,Acceptance,Mindfulness,"Mindfulness ""How"" Skills","- The ""Effectively"" skill in the Mindfulness module of DBT focuses on prioritizing effectiveness over the need to be right in a given situation.
+- It encourages individuals to concentrate on what works and to achieve their goals rather than sticking rigidly to their principles, especially when such adherence might lead to negative outcomes.
+- This skill is often highlighted in a session when a therapist discusses the concept of ""skillful means"" or when guiding a client to choose actions that lead to the desired result, even if it means compromising on being right.
+- It is particularly relevant for individuals who struggle with invalidation and have difficulty trusting their own judgments, helping them to learn that sometimes being effective is more important than being correct.",TRUE
+M8,Mindfulness Practice: A Spiritual Perspective,Acceptance,Mindfulness,Other Perspectives on Mindfulness,"- The ""Mindfulness Practice: A Spiritual Perspective"" skill in the Mindfulness module of DBT incorporates spirituality into mindfulness practices.
+- It acknowledges the origins of mindfulness in spiritual traditions and encourages clients to draw on their own spiritual or religious beliefs as a source of strength and coping.
+- This skill differentiates between spirituality (a personal quality regarding the transcendent or nonmaterial) and religion (an organized community with shared beliefs and rituals), and it aims to be inclusive of all clients' spiritual perspectives.
+- In a session, this skill might be identified by discussions or exercises that integrate spiritual beliefs with mindfulness practices, such as meditating on a higher power or using spiritual principles to cultivate wisdom, compassion, and acceptance.",TRUE
+M9,Balancing Doing Mind and Being Mind,Acceptance,Mindfulness,Other Perspectives on Mindfulness,"- The ""Balancing Doing Mind and Being Mind"" skill in the Mindfulness module of DBT emphasizes the importance of integrating goal-oriented activities (doing mind) with the capacity to be fully present in the moment (being mind).
+- Doing mind is associated with task-focused, goal-directed behavior, while being mind is related to experiencing the present without an agenda.
+- This skill encourages a balance between action and contemplation, suggesting that a synthesis of both is necessary for a well-rounded life.
+- In a session, this skill might be identified by discussions or exercises that help clients recognize when they are overly focused on tasks at the expense of experiencing the moment, or vice versa, and guiding them to find a middle ground.",TRUE
+IE1,Clarifying Priorities,Change,Interpersonal Effectiveness,Obtaining Objectives Skillfully,"- The ""Clarifying Priorities"" skill in the Interpersonal Effectiveness module of DBT involves identifying and understanding one's own objectives in a given interpersonal situation.
+- It requires weighing the importance of achieving one's own goals against the value of maintaining a positive relationship and preserving self-respect.
+- This skill is crucial for deciding which interpersonal strategies to employ and for setting boundaries in relationships.
+- In a session, it may be identified by the therapist asking the client to reflect on and articulate their goals, the importance of the relationship, and their self-respect in the context of an interpersonal challenge.",TRUE
+IE2,DEAR MAN,Change,Interpersonal Effectiveness,Obtaining Objectives Skillfully,"- The ""DEAR MAN"" skill in the Interpersonal Effectiveness module of DBT is a strategy used to teach individuals how to communicate effectively and assertively to achieve their objectives while maintaining relationships and self-respect.
+- It stands for Describe, Express feelings, Assert wishes, Reinforce, (stay) Mindful, Appear confident, and Negotiate.
+- The skill is particularly useful for clients who struggle with asking for what they need or saying no to others.
+- In a session, this skill would be identified by the therapist guiding the client through one or more of the steps in ""DEAR MAN.""",TRUE
+IE3,GIVE,Change,Interpersonal Effectiveness,Obtaining Objectives Skillfully,"- The ""GIVE"" skill in the Interpersonal Effectiveness module of DBT focuses on maintaining positive relationships while also achieving personal goals.
+- GIVE stands for: (be) Gentle, (act) Interested, Validate, and (use an) Easy manner.
+- Being ""Gentle"" means being non-judgmental and avoiding attacks, threats, or judging; ""Acting Interested"" involves listening and appearing interested in the other person; ""Validating"" shows understanding and acknowledgment of the other person's feelings and thoughts; and using an ""Easy manner"" includes having a light-hearted and non-intense approach.
+- In a session, this skill would be identified by the therapist guiding the client through one or more of the steps in ""GIVE.""",TRUE
+IE4,FAST,Change,Interpersonal Effectiveness,Obtaining Objectives Skillfully,"- The ""FAST"" skill in the Interpersonal Effectiveness module of DBT focuses on maintaining self-respect during interactions with others.
+- FAST stands for (be) Fair, (no) Apologies for being alive or for having an opinion, Stick to values, and (be) Truthful.
+- This skill is used to help individuals assert their needs and opinions without compromising their own values and integrity.
+- In a session, this skill would be identified by the therapist guiding the client through one or more of the steps in ""FAST.""",TRUE
+IE5,Whether and How Intensely to Ask or Say No,Change,Interpersonal Effectiveness,Obtaining Objectives Skillfully,"- The ""Whether and How Intensely to Ask or Say No"" skill is part of the Interpersonal Effectiveness module in DBT.
+- It involves evaluating the appropriateness and intensity of making a request or refusing one, considering the specific context and timing of the situation.
+- This skill teaches that interpersonal effectiveness varies with circumstances, and what may be effective in one scenario may not be in another, requiring a nuanced understanding of when and how to assert oneself.
+- In a session, this skill might be identified by discussions or role-plays about deciding if it's suitable to ask for something or to say no, and how to do so in a way that maintains relationships and self-respect.",TRUE
+IE6,Finding Potential Friends,Change,Interpersonal Effectiveness,"Skills for Building Relationships 
+and Ending Destructive Ones","- The ""Finding Potential Friends"" skill in the Interpersonal Effectiveness module of DBT focuses on actively seeking out individuals who could become friends, especially for those who feel isolated or lonely.
+- It emphasizes the necessity of making an effort to find and connect with people, as friendships typically do not form spontaneously.
+- The skill involves strategies for where and how to look for potential friends, which can include joining groups or activities where one is likely to meet like-minded individuals.
+- In a session, this skill might be identified by discussing specific steps or plans to engage in social activities or communities where the client has opportunities to meet new people.",TRUE
+IE7,Mindfulness of Others,Change,Interpersonal Effectiveness,"Skills for Building Relationships 
+and Ending Destructive Ones","- The ""Mindfulness of Others"" skill in the Interpersonal Effectiveness module of DBT emphasizes the importance of being aware and sensitive to the needs and reactions of others.
+- It involves describing one's own or another person's thoughts, feelings, or reactions without making judgmental comments, which can be detrimental to relationships.
+- This skill is closely linked to the mindfulness practice of describing, which is used to communicate observations in a non-judgmental and effective manner.
+- In a session, it may be identified by the therapist encouraging the client to express what they notice about others' behaviors or emotions in a factual and non-evaluative way.",TRUE
+IE8,How to End Relationships,Change,Interpersonal Effectiveness,"Skills for Building Relationships 
+and Ending Destructive Ones","- The ""How to End Relationships"" skill in the Interpersonal Effectiveness module of DBT addresses the challenges some individuals face when trying to leave harmful or unfulfilling relationships.
+- It focuses on overcoming emotional dysregulation that can lead to staying in such relationships out of fear, guilt, or excessive compassion for the other person, while neglecting one's own well-being.
+- This skill teaches individuals to recognize their limits, say no, and make decisions about ending relationships based on the needs of the situation rather than their current emotional state.
+- In a session, this skill might be identified by discussions on strategies for ending relationships in a healthy way, setting personal boundaries, and managing the emotions that arise during the process.",TRUE
+IE9,Dialectics,Change,Interpersonal Effectiveness,Walking the Middle Path,"- The ""Dialectics"" skill in the Interpersonal Effectiveness module of DBT involves recognizing and accepting the existence of multiple truths in a situation.
+- It emphasizes the concept that two things that seem like opposites can both be true, which helps in reducing black-and-white thinking and promotes a more balanced and effective approach to interpersonal interactions.
+- This skill encourages the practice of looking at all sides of a situation, understanding that everyone has their own perspective, and finding a synthesis or a middle path.
+- In a session, it might be identified by the therapist encouraging the client to consider both their own and another person's viewpoints, or by discussing how to find a compromise or integrate opposing needs or desires.",TRUE
+IE10,Validation,Change,Interpersonal Effectiveness,Walking the Middle Path,"- The ""Validation"" skill in the Interpersonal Effectiveness module of DBT focuses on acknowledging and affirming others' feelings, thoughts, and behaviors as understandable within their context.
+- It involves communicating attentiveness, understanding, nonjudgmental stance, empathy, and recognition of the person's reality or truth.
+- Validation is closely tied to mindfulness skills, as it requires the ability to observe, describe, and interact without judgment.
+- In a session, this skill might be identified by the therapist modeling validation for the client or by discussing how the client can validate others or themselves, especially after experiencing invalidation.",TRUE
+IE11,Behavior Change Strategies,Change,Interpersonal Effectiveness,Walking the Middle Path,"- ""Behavior Change Strategies"" in the Interpersonal Effectiveness module of DBT includes techniques for influencing others' behaviors through the systematic application of consequences.
+- It involves the use of positive and negative reinforcement, shaping, extinction, satiation, and punishment to modify future behavior.
+- This skill is an extension of the DEAR MAN skill (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate) which focuses on telegraphing the consequences of behavior.
+- In a session, this skill might be identified by discussing or planning how to respond to others' actions in a way that encourages desired behaviors or discourages undesired ones.",TRUE
+ER1,Understanding and Naming Emotions,Change,Emotion Regulation,,"- The ""Understanding and Naming Emotions"" skill in the Emotion Regulation module of DBT involves recognizing the purpose of emotions and the challenges associated with changing them.
+- It teaches that emotions serve to communicate with others, motivate behavior, influence others, and alert oneself to important events.
+- This skill emphasizes the importance of identifying and labeling emotions by observing one's responses and accurately describing the context, including the event, interpretations, history, physical sensations, expressive behaviors, and aftereffects.
+- In a session, this skill might be identified by the therapist asking the client to describe a recent emotional experience in detail, including what happened, how they interpreted it, and what they felt physically and emotionally.",TRUE
+ER2,Checking the Facts,Change,Emotion Regulation,Changing Emotional Responses,"- The ""Checking the Facts"" skill in the Emotion Regulation module of DBT involves assessing whether one's emotions and reactions are aligned with the actual events or are based on interpretations and assumptions.
+- It is a cognitive strategy that helps individuals distinguish between their thoughts and the objective facts of a situation, which can lead to more effective emotion regulation.
+- This skill is often identified in a session by the therapist asking the client to describe the event that triggered their emotional response and then examining the evidence to see if the response fits the facts.",TRUE
+ER3,Opposite Action,Change,Emotion Regulation,Changing Emotional Responses,"- The ""Opposite Action"" skill in the Emotion Regulation module of DBT involves doing the opposite of one's emotional urge when the emotion does not fit the current situation.
+- It is based on the idea that emotions lead to biologically wired urges to act, but by consciously acting in opposition to these urges, one can reduce the intensity of the emotion.
+- This skill is used when changing the emotion itself is the goal, especially when the emotion is unjustified by the facts of the situation.
+- In a session, it might be identified by a therapist asking a client to engage in an activity that is counter to what they feel like doing, such as encouraging someone who feels sad and wants to isolate to instead go out and socialize.",TRUE
+ER4,Problem Solving,Change,Emotion Regulation,Changing Emotional Responses,"- The ""Problem Solving"" skill in the Emotion Regulation module of DBT focuses on addressing the situations that trigger unwanted emotions by actively working to change them.
+- It involves a thorough assessment of the facts surrounding the emotional situation and taking steps to resolve the issues causing distress.
+- This skill is based on the understanding that while emotions themselves are not necessarily the result of distorted perceptions, the situations that elicit these emotions can often be altered through problem-solving strategies.
+- In a session, this skill might be identified by the therapist and client discussing a specific emotional event and collaboratively working through steps to address and change the situation that caused the emotional response.",TRUE
+ER5,Accumulate Positive Emotions,Change,Emotion Regulation,Reducing Vulnerability to Emotion Mind,"- The ""Accumulate Positive Emotions"" skill in the Emotion Regulation module of DBT focuses on increasing one's positive experiences to build resilience against emotional distress.
+- It involves engaging in activities that create positive emotions and developing a lifestyle that incorporates valued behaviors and experiences.
+- This skill helps to reduce vulnerability to negative emotions by creating a buffer of positive experiences.
+- In a session, it might be identified by the therapist discussing or planning pleasurable activities with the client that align with their values and interests, to be carried out as homework.",TRUE
+ER6,Build Mastery,Change,Emotion Regulation,Reducing Vulnerability to Emotion Mind,"- The ""Build Mastery"" skill in the Emotion Regulation module of DBT involves engaging in activities that make one feel competent and in control.
+- It is about doing things that are challenging yet possible, to increase feelings of self-efficacy and reduce vulnerability to negative emotions.
+- This skill is often identified in a session by the therapist encouraging the client to set a realistic goal in an area of their life where they want to improve and then take small, achievable steps towards accomplishing it.
+- The focus is on the process of building competence and the sense of achievement that comes with it, rather than on the outcome of the activity itself.",TRUE
+ER7,Cope Ahead,Change,Emotion Regulation,Reducing Vulnerability to Emotion Mind,"- The ""Cope Ahead"" skill in the Emotion Regulation module of DBT involves anticipating challenging situations and preparing for them mentally through imaginal rehearsal.
+- It includes planning how to handle potential difficulties and visualizing oneself coping effectively in the anticipated scenario.
+- This skill is based on the principle that mental practice can enhance actual performance, similar to how athletes improve by visualizing their movements.
+- In a session, it might be identified by a therapist asking a client to describe a difficult upcoming event and then guiding them through a detailed visualization of managing the situation successfully.",TRUE
+ER8,PLEASE,Change,Emotion Regulation,Reducing Vulnerability to Emotion Mind,"- The ""PLEASE"" skill in the Emotion Regulation module of DBT is an acronym that stands for treating PhysicaL illness, balanced Eating, Avoiding mood-altering drugs, balanced Sleep, and getting Exercise.
+- It emphasizes the connection between physical health and mental well-being, encouraging individuals to maintain their physical health as a foundation for emotional regulation.
+- The skill involves practical steps such as seeking medical treatment when necessary, eating healthily, abstaining from non-prescribed substances, ensuring adequate sleep, and regular physical activity.
+- In a session, it might be identified by discussions around establishing or maintaining healthy routines and habits that support both physical and emotional health.",TRUE
+ER9,Mindfulness of Current Emotions,Change,Emotion Regulation,Managing Extreme Emotions,"- ""Mindfulness of Current Emotions"" is a skill in the Emotion Regulation module of DBT that involves allowing oneself to experience emotions as they are, without judgment or attempts to suppress them.
+- The skill teaches that exposure to difficult emotions without negative consequences can reduce the intensity of those emotions over time.
+- It emphasizes that adding judgment to negative emotions can lead to secondary emotions like guilt or anxiety, which compound the original distress.
+- In a session, this skill might be identified by the therapist encouraging the client to notice and describe their emotions without labeling them as ""good"" or ""bad,"" and without trying to change them.",TRUE
+ER10,Identifying the Skills Breakdown Point,Change,Emotion Regulation,Managing Extreme Emotions,"- ""Identifying the Skills Breakdown Point"" is a skill in the Distress Tolerance module of Dialectical Behavior Therapy (DBT) that involves recognizing when one's emotional arousal is so high that more complex skills cannot be effectively utilized.
+- This skill is crucial for determining when to switch from attempting to use complicated emotion regulation strategies to simpler crisis survival skills.
+- It is a self-awareness practice that helps individuals to acknowledge their limits and to apply the most appropriate DBT skills for their current emotional state.
+- In a session, this skill might be identified by a therapist asking a client to reflect on past experiences to pinpoint when they felt overwhelmed and what signs indicated they were past the point of using complex skills.",TRUE
+DT1,STOP,Acceptance,Distress Tolerance,Crisis Survival Skills,"- The ""STOP"" skill in the Distress Tolerance module of DBT is designed to prevent impulsive actions during emotional distress.
+- STOP stands for: Stop, Take a step back, Observe, and Proceed mindfully, which are the steps to follow when one feels overwhelmed by emotions.
+- It encourages individuals to pause before reacting, observe the situation, and then proceed with awareness and consideration of the consequences.
+- In a session, this skill would be identified by the therapist guiding the client through one or more of the steps in ""STOP.""",TRUE
+DT2,Pros and Cons,Acceptance,Distress Tolerance,Crisis Survival Skills,"- The ""Pros and Cons"" skill in the Distress Tolerance module of DBT is a cognitive strategy for evaluating the positive and negative outcomes of a particular action, especially in response to crisis situations.
+- It involves listing the advantages (pros) and disadvantages (cons) of acting on impulsive urges as well as the pros and cons of resisting these urges and tolerating the distress.
+- The skill aims to help individuals recognize that tolerating distress and accepting reality are more beneficial in the long term than acting on impulsive behaviors that reject reality.
+- In a session, this skill might be identified by the therapist asking the client to explicitly list out or discuss the potential consequences of their actions in a crisis scenario.",TRUE
+DT3,TIP Body Chemistry,Acceptance,Distress Tolerance,Crisis Survival Skills,"- The ""TIP"" skill in the Distress Tolerance module of DBT stands for Temperature, Intense exercise, Paced breathing, and Paired muscle relaxation.
+- It is designed to rapidly alter body chemistry to reduce intense emotional arousal by engaging the parasympathetic nervous system and calming the sympathetic nervous system.
+- In a session, this skill might be identified by a therapist instructing a client to hold their breath and then plunge their face into cold water (Temperature), engage in a brief burst of intense physical activity (Intense exercise), practice slow, deep breaths (Paced breathing), or tense and then relax their muscles in sequence (Paired muscle relaxation).",TRUE
+DT4,Distracting with Wise Mind ACCEPTS,Acceptance,Distress Tolerance,Crisis Survival Skills,"- The ""Distracting with Wise Mind ACCEPTS"" skill in the Distress Tolerance module of DBT involves using various strategies to distract oneself from distressing emotions or situations.
+- The acronym ACCEPTS stands for Activities, Contributing, Comparisons, Emotions, Pushing away, Thoughts, and Sensations, which are different methods to divert attention away from emotional pain.
+- This skill is designed to temporarily reduce emotional suffering by engaging in alternative activities or thoughts until the individual is better able to address the issue.
+- In a session, this skill might be identified by a therapist suggesting the client engage in one or more of the items within ""ACCEPTS"" to help manage intense emotions.",TRUE
+DT5,Self-Soothing Through the Senses,Acceptance,Distress Tolerance,Crisis Survival Skills,"- The ""Self-Soothing Through the Senses"" skill in the Distress Tolerance module of DBT encourages individuals to engage in comforting activities that appeal to their five senses.
+- This skill is designed to help individuals cope with distress by focusing on pleasant sensory experiences such as looking at beautiful scenery, listening to calming music, or enjoying a fragrant scent.
+- The body scan meditation is an example of a self-soothing activity that involves touch and proprioceptive awareness, as it guides individuals to pay attention to sensations in different parts of their body.
+- In a session, this skill might be identified by the therapist suggesting the client think of or engage in activities that provide a soothing experience for each of their senses.",TRUE
+DT6,IMPROVE the Moment,Acceptance,Distress Tolerance,Crisis Survival Skills,"- The ""IMPROVE the Moment"" skill in the Distress Tolerance module of DBT is designed to help individuals cope with crisis situations by improving the quality of the moment.
+- The acronym IMPROVE stands for Imagery, Meaning, Prayer, Relaxing actions, One thing in the moment, Vacation, and Encouragement.
+- Each component of the IMPROVE acronym represents a different strategy that can be used to reduce distress and create a sense of calm or relief.
+- In a session, this skill might be identified by a therapist suggesting the client engage in one or more of the items within ""IMPROVE."" ",TRUE
+DT7,Radical Acceptance,Acceptance,Distress Tolerance,Reality Acceptance Skills,"- The ""Radical Acceptance"" skill in the Distress Tolerance module of Dialectical Behavior Therapy DBT is about fully accepting reality as it is, without resisting or fighting against it.
+- It requires recognizing and coming to terms with the facts of a situation, even if they are painful or difficult to accept.
+- Radical Acceptance is not the same as approving of the situation, nor does it mean that one cannot work toward change in the future.
+- In a session, this skill might be identified by a therapist encouraging a client to acknowledge their current circumstances without judgment and to stop struggling against what cannot be changed.",TRUE
+DT8,Turning the Mind,Acceptance,Distress Tolerance,Reality Acceptance Skills,"- The ""Turning the Mind"" skill in the Distress Tolerance module of DBT involves the intentional choice to move toward acceptance of reality.
+- It is not the act of full acceptance but rather the initial step in the direction of accepting an uncomfortable or difficult reality.
+- This skill is characterized by repeated efforts, as it often requires multiple attempts to genuinely turn one's mind toward acceptance.
+- In a session, it might be identified by a therapist asking a client to consciously choose to accept a situation each time they find themselves resisting or struggling against reality.",TRUE
+DT9,Willingness,Acceptance,Distress Tolerance,Reality Acceptance Skills,"- The ""Willingness"" skill in the Distress Tolerance module of DBT involves adopting an open and accepting attitude towards the present moment and life's challenges, rather than trying to control or resist them.
+- It is characterized by a conscious choice to participate fully in life and to say ""yes"" to experiences as they come, without trying to manipulate or avoid them.
+- This skill contrasts with ""willfulness,"" which is the act of refusing to accept reality, being rigid, and attempting to impose one's will onto situations.
+- In a session, willingness might be identified by a therapist encouraging a client to accept a situation as it is and to engage with it without resistance, often using phrases like ""saying yes to the mystery of being alive.""",TRUE
+DT10,Half-Smiling and Willing Hands,Acceptance,Distress Tolerance,Reality Acceptance Skills,"- ""Half-Smiling"" is a Distress Tolerance skill in DBT that involves relaxing the facial muscles and slightly upturning the corners of the lips to foster a sense of acceptance.
+- ""Willing Hands"" is a Distress Tolerance skill in DBT that involves unclenching hands, placing palms up, and relaxing fingers, symbolizing openness and non-resistance to reality.
+- These skills are based on the idea that adopting certain physical postures can influence emotions and promote a more accepting attitude.
+- In a session, these skills might be identified by a therapist instructing a client to adopt these physical positions to help them cope with difficult situations without trying to change them.",TRUE
+DT11,Mindfulness of Current Thoughts,Acceptance,Distress Tolerance,Reality Acceptance Skills,"- The ""Mindfulness of Current Thoughts"" skill in the Distress Tolerance module of DBT focuses on observing thoughts as mere events in the mind rather than as reflections of reality.
+- It encourages clients to view thoughts as neural activities or sensations, which helps in creating a separation between themselves and their thoughts, reducing reactivity.
+- This skill involves allowing thoughts to come and go without getting attached to them or believing them to be true.",TRUE
+DT12,Dialectical Abstinence,Acceptance,Distress Tolerance,Supplementary Addiction Skills,"- ""Dialectical Abstinence"" is a Distress Tolerance skill in DBT that combines an abstinence approach with harm reduction strategies to manage substance dependence.
+- It aims to prevent lapses in abstinence and effectively manage them if they occur to avoid a full-blown relapse, drawing on principles from the cognitive-behavioral relapse prevention model.
+- In a session, it might be identified by discussions of strategies to maintain abstinence, cope with potential lapses, and reduce the negative impact of any lapses that do occur.",TRUE
+DT13,Clear Mind,Acceptance,Distress Tolerance,Supplementary Addiction Skills,"- ""Clear Mind"" is a skill in the Distress Tolerance module of DBT that is specifically tailored for individuals with drug dependence.
+- It represents a balanced state between ""addict mind,"" which is controlled by addiction, and ""clean mind,"" which is abstinent but may underestimate the risk of relapse.
+- The skill emphasizes maintaining abstinence while being fully aware of the potential for relapse, thus promoting a realistic and vigilant approach to recovery.
+- In a session, it might be identified by discussions of finding a middle path between complacency in recovery and the compulsive behaviors associated with addiction.",TRUE
+DT14,Community Reinforcement,Acceptance,Distress Tolerance,Supplementary Addiction Skills,"- The ""Community Reinforcement"" skill in the Distress Tolerance module of DBT is designed to help individuals with drug dependence by increasing positive reinforcement for abstinence.
+- It involves identifying and engaging in activities within the community that are rewarding and support sobriety, thereby reducing the appeal of addictive behaviors.
+- In a session, it might be identified by discussions or exercises focused on enhancing the client's involvement in non-substance-related community activities that provide a sense of fulfillment or joy.",TRUE
+DT15,Burning Bridges and Building New Ones,Acceptance,Distress Tolerance,Supplementary Addiction Skills,"- The ""Burning Bridges"" skill in the Distress Tolerance module of DBT involves actively removing triggers or cues that may lead to engaging in addictive behaviors.
+- The ""Building New Ones"" skill complements this by encouraging the creation of new, positive experiences and mental images that can help counteract the urges associated with addiction.
+- In a session, these skills might be identified by discussions or activities focused on identifying and planning to remove addiction triggers, as well as developing healthy alternatives.",TRUE
+DT16,Alternate Rebellion and Adaptive Denial,Acceptance,Distress Tolerance,Supplementary Addiction Skills,"- ""Alternate Rebellion"" is a Distress Tolerance skill in DBT that encourages individuals to find safer ways to express rebellion, rather than engaging in harmful addictive behaviors.
+- ""Adaptive Denial"" is another Distress Tolerance skill that involves temporarily denying or shutting out urges for addictive behaviors, sometimes by believing that the behavior is not possible.
+- In a session, these skills might be identified by discussing alternative, non-harmful actions to take when feeling the urge to rebel or practicing ways to deny the possibility of engaging in an addictive behavior.",TRUE
