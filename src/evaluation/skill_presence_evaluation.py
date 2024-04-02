@@ -1,108 +1,78 @@
-import sys, os
-from openai import AzureOpenAI
-from dotenv import load_dotenv
+import sys
+import os
+import re
+import json
 import pandas as pd
 import logging
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s: %(message)s')
-logger = logging.getLogger('adherence_evaluation')
+logger = logging.getLogger('skill_presence_evaluation')
 logger.setLevel(logging.INFO)
 
 sys.path.append(os.path.join(sys.path[0], '..'))
 sys.path.append(os.path.join(sys.path[0], '../..'))
 
 from .evaluation import Evaluation
-from utils.openai_api import get_openai_response_content
-
-load_dotenv('.env')
-
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', None)
-OAI_ENDPOINT = os.getenv('OAI_ENDPOINT', None)
-MODEL_DEPLOYMENT = os.getenv('MODEL_DEPLOYMENT', 'gpt4-1106')
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
+
+DBT_SKILLS_REF = pd.read_csv(
+    os.path.join(dir_path, '..', 'data', 'dbt_skills_ref.csv'),
+    index_col='skill_id',
+)
+VALID_SKILL_IDS = list(DBT_SKILLS_REF.index)
+with open(os.path.join(dir_path, '..', 'data', 'skill_presence_regex.json'), 'r') as f:
+    SKILL_PRESENCE_REGEX = json.load(f)
+
+
+class DBTSkill:
+    def __init__(self, skill_id: str):
+        assert skill_id in VALID_SKILL_IDS
+        self.skill_id = skill_id
+
+        ref_row = DBT_SKILLS_REF.loc[skill_id]
+        self.skill_name = ref_row.skill_name
+        self.module_focus = ref_row.module_focus
+        self.module_name = ref_row.module_name
+        self.category_name = None
+        category_name = ref_row.category_name
+        if pd.notna(category_name):
+            self.category_name = category_name
+
+        self.skill_desc = ref_row.skill_desc
+        self.pattern_str = SKILL_PRESENCE_REGEX[self.skill_id]
+        self.pattern = re.compile(self.pattern_str)
+
+    def get_regex_result(self, conversation: str):
+        if re.search(self.pattern, conversation):
+            return 1
+        return 0
+
+
+class DBTSkills:
+    def __init__(self, skill_ids: list[str] = None):
+        if not skill_ids:
+            self.skill_ids = VALID_SKILL_IDS
+        else:
+            self.skill_ids = skill_ids
+        self.skills = [DBTSkill(skill_id=skill_id) for skill_id in self.skill_ids]
+
+    def get_regex_results(self, conversation: str):
+        return self.skills, [skill.get_regex_result(conversation) for skill in self.skills]
+
 
 class SkillPresenceEvaluation(Evaluation):
 
     name = 'Skill Presence'
 
-    def __init__(self, number_iterations):
-        #self.dataset = dataset
-        self.number_iterations = number_iterations
-        eval_prompts_path = os.path.join(dir_path, '../data/Evaluation Prompts.tsv')
-        self.checklist_df = pd.read_csv(eval_prompts_path, delimiter = '\t')
-        self.openai_client = AzureOpenAI(
-                api_key = OPENAI_API_KEY,
-                api_version = "2023-05-15",
-                azure_endpoint = f"https://{OAI_ENDPOINT}.openai.azure.com/"
-                )
-
-
-        # Get evaluation dataset
-        # subscription_id = '8048e16e-5368-4d28-8d68-657559f557e7'
-        # resource_group = 'dbt-rg-openai'
-        # workspace_name = 'berkeley_dbt'
-
-        # workspace = Workspace(subscription_id, resource_group, workspace_name)
-
-        # dataset = Dataset.get_by_name(workspace, name='EvaluationPromptsChecklistComplete')
-        # self.checklist_df = dataset.to_pandas_dataframe()
-
-        # standard = dataset['Standard']
-        # standard_prompts = dataset['System Prompt']
-
-
-
-    def evaluate_conversation(self, conversation):
-        # Get proportion of adherence
-        # returns a dictionary with keys = standard name, value = proportion
-
-        adherence_checklist = {}
-
-
-        n_criterion = len(self.checklist_df)
-        i = 0
-        for _i, row in self.checklist_df.iterrows():
-            # call each prompt on each conversation
-            criterion_name = row['Standard']
-            logger.info(f'Running criterion: {criterion_name} ({int(i)+1}/{n_criterion})')
-            messages = [
-                    {"role": "system", "content": row['System Prompt']},
-                    {"role": "user", "content": conversation}
-                    ]
-            # result = get_openai_response_content(self.openai_client, messages, MODEL_DEPLOYMENT)
-
-            response = self.openai_client.chat.completions.create(
-                model=MODEL_DEPLOYMENT,
-                messages=messages
-            )
-            msg_txt = response.choices[0].message.content
-            if msg_txt is None:
-                logger.error('Empty msg_txt', msg_txt)
-            # print(msg_txt)
-            adherence_checklist[criterion_name] = int(msg_txt) if msg_txt is not None else msg_txt
-            i += 1
-
-
-        return adherence_checklist
-
+    def __init__(self, skill_ids: list[str] = None):
+        self.dbt_skills = DBTSkills(skill_ids)
+        logger.info(f'Launching skill presence evaluation with following skill ids: {self.dbt_skills.skill_ids}')
 
     def run_evaluation(self, conversation: str):
-        evaluation_list = []
-        for i in range(self.number_iterations):
-            logger.info(f"Running iteration {i}")
-
-            result = self.evaluate_conversation(conversation)
-            evaluation_list.append(result)
-
-        # Aggregate all iterations
-        evaluation_keys = evaluation_list[0].keys()
-
-        proportion_adherence = {}
-        for criterion in evaluation_keys:
-            sum_of_key = 0
-            for evaluation in evaluation_list:
-                if criterion in evaluation:
-                    sum_of_key += evaluation[criterion]
-            proportion_adherence[criterion] = (sum_of_key / self.number_iterations)
-        return proportion_adherence
+        skill_ids_present = []
+        skills, regex_results = self.dbt_skills.get_regex_results(conversation)
+        for i, res in enumerate(regex_results):
+            if res == 1:
+                skill_ids_present.append(skills[i].skill_id)
+        return skill_ids_present
