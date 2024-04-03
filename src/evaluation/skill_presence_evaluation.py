@@ -56,6 +56,10 @@ class DBTSkills:
         else:
             self.skill_ids = skill_ids
         self.skills = [DBTSkill(skill_id=skill_id) for skill_id in self.skill_ids]
+        self.skills_dict = {skill.skill_id: skill for skill in self.skills}
+
+    def get_skill(self, skill_id: str):
+        return self.skills_dict.get(skill_id)
 
     def get_regex_results(self, conversation: str):
         return self.skills, [skill.get_regex_result(conversation) for skill in self.skills]
