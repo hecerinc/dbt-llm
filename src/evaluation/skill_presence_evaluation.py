@@ -73,10 +73,28 @@ class SkillPresenceEvaluation(Evaluation):
         self.dbt_skills = DBTSkills(skill_ids)
         logger.info(f'Launching skill presence evaluation with following skill ids: {self.dbt_skills.skill_ids}')
 
+    @staticmethod
+    def _check_ids_all_present(skill_ids, search_skill_ids):
+        return all([search_id in skill_ids for search_id in search_skill_ids])
+
     def run_evaluation(self, conversation: str):
         skill_ids_present = []
         skills, regex_results = self.dbt_skills.get_regex_results(conversation)
         for i, res in enumerate(regex_results):
             if res == 1:
                 skill_ids_present.append(skills[i].skill_id)
+
+        if self._check_ids_all_present(skill_ids_present, ['M1', 'DT4']):
+            # Remove "Wise Mind" if "Distracting with Wise Mind ACCEPTS" is present
+            skill_ids_present.remove('M1')
+        if self._check_ids_all_present(skill_ids_present, ['M2', 'DT1']):
+            # Remove "Observe" if "STOP" is present
+            skill_ids_present.remove('M2')
+        if self._check_ids_all_present(skill_ids_present, ['M3', 'IE2']):
+            # Remove "Describe" if "DEAR MAN" is present
+            skill_ids_present.remove('M3')
+        if self._check_ids_all_present(skill_ids_present, ['IE10', 'IE3']):
+            # Remove "Validation" if "GIVE" is present
+            skill_ids_present.remove('IE10')
+
         return skill_ids_present
