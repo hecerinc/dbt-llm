@@ -43,6 +43,19 @@ class DBTSkill:
         self.pattern_str = SKILL_PRESENCE_REGEX[self.skill_id]
         self.pattern = re.compile(self.pattern_str)
 
+    def get_hierarchy_match(self, other):
+        if other is None:
+            return 'no_match', 0
+        if self.skill_name == other.skill_name:
+            return 'skill', 4
+        if self.category_name == other.category_name:
+            return 'category', 3
+        if self.module_name == other.module_name:
+            return 'module', 2
+        if self.module_focus == other.module_focus:
+            return 'module_focus', 1
+        return 'no_match', 0
+
     def get_regex_result(self, conversation: str):
         if re.search(self.pattern, conversation):
             return 1
