@@ -1,5 +1,5 @@
 skill_id,skill_name,module_focus,module_name,category_name,skill_desc,use_regex
-M1,Wise Mind,Acceptance,Mindfulness,,"- The ""Wise Mind"" skill in the Mindfulness module of DBT refers to a state of mind where an individual integrates both rational thought (Reasonable Mind) and emotional experience (Emotion Mind) to make balanced and effective decisions.
+M1,Wise Mind,Acceptance,Mindfulness,Core Mindfulness Skills,"- The ""Wise Mind"" skill in the Mindfulness module of DBT refers to a state of mind where an individual integrates both rational thought (Reasonable Mind) and emotional experience (Emotion Mind) to make balanced and effective decisions.
 - It is considered a core concept in DBT, representing an inner knowledge and intuition that everyone possesses, which can guide them to a sense of truth and balanced action.
 - In practice, this skill involves recognizing when one is operating from either the Reasonable Mind or the Emotion Mind and then working towards achieving a synthesis of the two, which is the Wise Mind.
 - During a session, it might be identified by the therapist asking the client to reflect on a situation and consider what their emotions, reason, and intuition are telling them, aiming to find a middle path that incorporates all aspects.",TRUE
@@ -55,18 +55,15 @@ IE5,Whether and How Intensely to Ask or Say No,Change,Interpersonal Effectivenes
 - It involves evaluating the appropriateness and intensity of making a request or refusing one, considering the specific context and timing of the situation.
 - This skill teaches that interpersonal effectiveness varies with circumstances, and what may be effective in one scenario may not be in another, requiring a nuanced understanding of when and how to assert oneself.
 - In a session, this skill might be identified by discussions or role-plays about deciding if it's suitable to ask for something or to say no, and how to do so in a way that maintains relationships and self-respect.",TRUE
-IE6,Finding Potential Friends,Change,Interpersonal Effectiveness,"Skills for Building Relationships 
-and Ending Destructive Ones","- The ""Finding Potential Friends"" skill in the Interpersonal Effectiveness module of DBT focuses on actively seeking out individuals who could become friends, especially for those who feel isolated or lonely.
+IE6,Finding Potential Friends,Change,Interpersonal Effectiveness,"Skills for Building Relationships and Ending Destructive Ones","- The ""Finding Potential Friends"" skill in the Interpersonal Effectiveness module of DBT focuses on actively seeking out individuals who could become friends, especially for those who feel isolated or lonely.
 - It emphasizes the necessity of making an effort to find and connect with people, as friendships typically do not form spontaneously.
 - The skill involves strategies for where and how to look for potential friends, which can include joining groups or activities where one is likely to meet like-minded individuals.
 - In a session, this skill might be identified by discussing specific steps or plans to engage in social activities or communities where the client has opportunities to meet new people.",TRUE
-IE7,Mindfulness of Others,Change,Interpersonal Effectiveness,"Skills for Building Relationships 
-and Ending Destructive Ones","- The ""Mindfulness of Others"" skill in the Interpersonal Effectiveness module of DBT emphasizes the importance of being aware and sensitive to the needs and reactions of others.
+IE7,Mindfulness of Others,Change,Interpersonal Effectiveness,"Skills for Building Relationships and Ending Destructive Ones","- The ""Mindfulness of Others"" skill in the Interpersonal Effectiveness module of DBT emphasizes the importance of being aware and sensitive to the needs and reactions of others.
 - It involves describing one's own or another person's thoughts, feelings, or reactions without making judgmental comments, which can be detrimental to relationships.
 - This skill is closely linked to the mindfulness practice of describing, which is used to communicate observations in a non-judgmental and effective manner.
 - In a session, it may be identified by the therapist encouraging the client to express what they notice about others' behaviors or emotions in a factual and non-evaluative way.",TRUE
-IE8,How to End Relationships,Change,Interpersonal Effectiveness,"Skills for Building Relationships 
-and Ending Destructive Ones","- The ""How to End Relationships"" skill in the Interpersonal Effectiveness module of DBT addresses the challenges some individuals face when trying to leave harmful or unfulfilling relationships.
+IE8,How to End Relationships,Change,Interpersonal Effectiveness,"Skills for Building Relationships and Ending Destructive Ones","- The ""How to End Relationships"" skill in the Interpersonal Effectiveness module of DBT addresses the challenges some individuals face when trying to leave harmful or unfulfilling relationships.
 - It focuses on overcoming emotional dysregulation that can lead to staying in such relationships out of fear, guilt, or excessive compassion for the other person, while neglecting one's own well-being.
 - This skill teaches individuals to recognize their limits, say no, and make decisions about ending relationships based on the needs of the situation rather than their current emotional state.
 - In a session, this skill might be identified by discussions on strategies for ending relationships in a healthy way, setting personal boundaries, and managing the emotions that arise during the process.",TRUE
@@ -82,7 +79,7 @@ IE11,Behavior Change Strategies,Change,Interpersonal Effectiveness,Walking the M
 - It involves the use of positive and negative reinforcement, shaping, extinction, satiation, and punishment to modify future behavior.
 - This skill is an extension of the DEAR MAN skill (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate) which focuses on telegraphing the consequences of behavior.
 - In a session, this skill might be identified by discussing or planning how to respond to others' actions in a way that encourages desired behaviors or discourages undesired ones.",TRUE
-ER1,Understanding and Naming Emotions,Change,Emotion Regulation,,"- The ""Understanding and Naming Emotions"" skill in the Emotion Regulation module of DBT involves recognizing the purpose of emotions and the challenges associated with changing them.
+ER1,Understanding and Naming Emotions,Change,Emotion Regulation,Core Emotion Regulation Skills,"- The ""Understanding and Naming Emotions"" skill in the Emotion Regulation module of DBT involves recognizing the purpose of emotions and the challenges associated with changing them.
 - It teaches that emotions serve to communicate with others, motivate behavior, influence others, and alert oneself to important events.
 - This skill emphasizes the importance of identifying and labeling emotions by observing one's responses and accurately describing the context, including the event, interpretations, history, physical sensations, expressive behaviors, and aftereffects.
 - In a session, this skill might be identified by the therapist asking the client to describe a recent emotional experience in detail, including what happened, how they interpreted it, and what they felt physically and emotionally.",TRUE
