@@ -1,0 +1,11 @@
+{
+	"name": "dbt-website",
+	"version": "1.0.0",
+	"description": "Website for DBT-LLM",
+	"scripts": {},
+	"author": "Hector Rincon",
+	"license": "ISC",
+	"devDependencies": {
+		"parcel": "^2.12.0"
+	}
+}
