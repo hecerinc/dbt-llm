@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
 
-	<title>DBoT landing page</title>
+	<title>BerkeleyDBT</title>
 
 	<!-- <link rel="shortcut icon" href="../assets/images/favicon.svg" type="image/svg" /> -->
 
@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="assets/css/tiny-slider.css" />
 
 	<link rel="stylesheet" href="assets/css/glightbox.min.css" />
-	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="style.scss" />
 </head>
 <body>
 	<section class="navbar-area navbar-five">
@@ -26,9 +26,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<nav class="navbar navbar-expand-lg">
-						<a class="navbar-brand" href="index.html">
-							<img src="assets/images/stones.svg" alt="Logo" />
-							DBoT
+						<a class="navbar-brand" href="index.html" hidden>
+							<img src="assets/images/stones.svg" alt="Logo" /> DBoT
 						</a>
 						<button
 							class="navbar-toggler"
@@ -49,16 +48,19 @@
 									<a class="page-scroll active" href="#hero">Home</a>
 								</li>
 								<li class="nav-item">
-									<a class="page-scroll" href="#features">Features</a>
+									<a class="page-scroll" href="#features">Objectives</a>
+								</li>
+								<li class="nav-item">
+									<a class="page-scroll" href="#whydbt">Why DBT?</a>
 								</li>
 								<li class="nav-item">
 									<a class="page-scroll" href="#about">About</a>
 								</li>
 								<li class="nav-item">
-									<a class="page-scroll" href="#team">Team</a>
+									<a class="page-scroll" href="#DeeBot">DeeBoT</a>
 								</li>
 								<li class="nav-item">
-									<a class="page-scroll" href="#testimonial">Testimonial</a>
+									<a class="page-scroll" href="#team">Team</a>
 								</li>
 							</ul>
 						</div>
@@ -74,7 +76,14 @@
 		<div class="header-inner">
 			<div class="container">
 				<div class="row align-items-center">
-					<div class="col-lg-6 co-12">
+					<div class="col-12">
+						<div class="hero-brand">
+							<img class="hero-logo" src="assets/images/stones.svg" alt="Logo" />
+							<h1 class="hero-text">BerkeleyDBT</h1>
+							<p class="hero-tagline">Adipisicing obcaecati cumque non qui laboriosam. Dicta distinctio consequuntur laborum?</p>
+						</div>
+					</div>
+					<div class="col-lg-6 col-12" hidden>
 						<div class="home-slider">
 							<div class="header-text">
 								<h1>Achieve wise mind with DBoT, powered by GPT</h1>
@@ -83,22 +92,21 @@
 									Ipsum has been the industry's standard dummy text ever since.
 								</p>
 								<div class="button light-rounded-buttons">
-									<a href="https://berkeley-dbt.azurewebsites.net/" target="_blank" rel="noopener noreferer" class="btn primary-btn">Get started</a>
+									<a
+										href="https://berkeley-dbt.azurewebsites.net/"
+										target="_blank"
+										rel="noopener noreferer"
+										class="btn primary-btn"
+										>Get started</a
+									>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-6 col-12">
-						<div class="mobile-screen">
-							<img src="assets/images/header/app-overview.png" alt="#" />
-						</div>
-					</div>
+					<div class="col-lg-6 col-12"></div>
 				</div>
 			</div>
 		</div>
-	</section>
-
-	<section class="client-logo-area client-logo-three">
 	</section>
 
 	<section id="features" class="features-area features-twelve">
@@ -107,12 +115,9 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="content">
-							<span>Features</span>
-							<h2 class="fw-bold">Checkout Our Software Features Below.</h2>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor
-								incididunt ut labore aliqua.
-							</p>
+							<span>Objectives</span>
+							<h2 class="fw-bold">The project's objectives</h2>
+							<p>This project aims to demonstrate how new developments in NLP can be utilized in mental health education, particularly in making DBT more accessible. We hope to contribute substantially to the field of mental health services, offering practical solutions that enhance user experience and accessibility.</p>
 						</div>
 					</div>
 				</div>
@@ -120,47 +125,76 @@
 		</div>
 
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6 col-12">
+			<div class="row align-items-stretch" style="row-gap: 20px;">
+				<div class="col-lg-6 col-md-6 col-12">
 					<div class="features-style-twelve">
-						<div class="feature-icon">
+						<div class="feature-icon" hidden>
 							<i class="lni lni-rocket"></i>
 						</div>
-						<h4>Super Fast</h4>
-						<p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor</p>
+						<h4>Cutting-edge technology</h4>
+						<ul class="proper-text">
+							<li>Construct a learning-based machine that can intelligently discuss DBT concepts and guide users through the fundamental DBT skills such as mindfulness, distress tolerance, emotional regulation, and interpersonal effectiveness.</li>
+							<li>Ensure that the chatbot simulates a thoughtful and empathetic conversation style, reflective of therapeutic interactions but clear in its role as a support tool rather than a therapist replacement.</li>
+						</ul>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-6 col-12">
+				<div class="col-lg-6 col-md-6 col-12">
 					<div class="features-style-twelve">
-						<div class="feature-icon">
+						<div class="feature-icon" hidden>
 							<i class="lni lni-wechat"></i>
 						</div>
-						<h4>Live Chat</h4>
-						<p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor</p>
+						<h4>Simulation &amp; evaluation</h4>
+						<ul class="proper-text">
+
+							<li> Develop tools that simulate conversations to train and fine-tune the chatbot, ensuring that the guidance it provides aligns accurately with established DBT protocols.</li>
+							<li>Implement rigorous evaluation metrics to measure the chatbot’s accuracy in recommending DBT skills and its consistency in adhering to the precise standards of DBT, safeguarding both efficacy and safety in user interactions.</li>
+						</ul>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-6 col-12">
+				<div class="col-lg-6 col-md-6 col-12">
 					<div class="features-style-twelve">
-						<div class="feature-icon">
+						<div class="feature-icon" hidden>
 							<i class="lni lni-layers"></i>
 						</div>
-						<h4>Secure Data</h4>
-						<p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor</p>
+						<h4>Accessibility</h4>
+						<ul class="proper-text">
+							<li>Address the prevalent challenge in the accessibility of mental health resources by providing a supplementary tool that users can access discreetly and conveniently from their digital devices.</li>
+							<li> Assist both individuals in need of mental health support and providers by offering a readily available resource that helps in understanding and practicing DBT skills, thereby acting as a bridging tool until direct therapist interaction is possible or alongside ongoing therapy.</li>
+						</ul>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-6 col-12">
+				<div class="col-lg-6 col-md-6 col-12">
 					<div class="features-style-twelve">
-						<div class="feature-icon">
+						<div class="feature-icon" hidden>
 							<i class="lni lni-timer"></i>
 						</div>
-						<h4>Optimize Time</h4>
-						<p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor</p>
+						<h4>Ethics &amp; safety</h4>
+						<ul class="proper-text">
+							<li>Clearly communicate the chatbot’s intended use as a non-therapeutic tool that provides educational content and guidance on DBT, and not as a replacement for professional mental health treatment.</li>
+							<li>Emphasize on safeguarding user data and ensuring the ethical use of conversational AI in a sensitive domain like mental health education.</li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
+	<section id="whydbt" class="whydbt-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-6 row align-items-center ">
+					<h2 class="fw-bold">Why DBT?</h2>
+				</div>
+				<div class="col-6">
+					<div class="proper-text">
+						<p>Adipisicing a quod repudiandae at neque dolorum Recusandae asperiores id laudantium laudantium tempore qui? Debitis debitis maxime sapiente est odit asperiores distinctio Harum placeat numquam necessitatibus voluptatum illum? Asperiores atque reiciendis illo dolor ullam Officiis aut consequatur culpa nostrum laboriosam!</p><p> Qui reiciendis voluptate fuga ut natus? Architecto nemo dolorem expedita assumenda dolorum assumenda? Consequatur totam amet error quae eligendi. Modi ex ea quidem blanditiis eius Possimus corporis deleniti sequi adipisci explicabo Repellat dolor velit enim est sint, fugiat? Dolorum vitae quae ad animi maxime Molestiae eos fuga fugiat facere aliquid voluptas. Omnis id quod iusto asperiores corrupti Nihil quibusdam quod.</p>
+						<p>Consectetur rem eius similique repellendus magni Eligendi eaque quos id illo nulla rerum. Inventore quasi excepturi quidem minus maxime corporis? Quod culpa quaerat maiores corrupti aspernatur. Unde numquam facere iure dicta mollitia numquam? Officiis sed excepturi ipsa possimus expedita? Reprehenderit quos perspiciatis sit iusto beatae eos tenetur Sapiente laudantium eos?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
 	<section id="about" class="about-us about-eight">
 		<div class="container">
 			<div class="row align-items-center">
@@ -224,7 +258,6 @@
 			</div>
 		</div>
 	</section>
-
 
 	<section class="slider-seven">
 		<div class="section-title-two">
@@ -382,7 +415,7 @@
 									<path
 										class="st0"
 										d="M7.8,3.9c0,1.6-1.3,2.9-2.9,2.9s-3-1.2-3-2.9S3.1,1,4.7,1l0,0C6.4,1,7.7,2.3,7.8,3.9C7.8,3.8,7.8,3.9,7.8,3.9z
-	M23.3,3.9c0,1.6-1.3,2.9-2.9,2.9s-2.9-1.3-2.9-2.9S18.8,1,20.4,1l0,0C22,1,23.3,2.3,23.3,3.9z M38.8,3.9c0,1.6-1.3,2.9-2.9,2.9
+M23.3,3.9c0,1.6-1.3,2.9-2.9,2.9s-2.9-1.3-2.9-2.9S18.8,1,20.4,1l0,0C22,1,23.3,2.3,23.3,3.9z M38.8,3.9c0,1.6-1.3,2.9-2.9,2.9
 c-1.6,0-2.9-1.3-2.9-2.9S34.3,1,35.9,1l0,0C37.6,1,38.8,2.3,38.8,3.9L38.8,3.9z M54.5,3.9c0,1.6-1.3,2.9-2.9,2.9
 c-1.6,0-2.9-1.3-2.9-2.9S49.9,1,51.5,1l0,0C53.1,1,54.5,2.3,54.5,3.9L54.5,3.9z M70,3.9c0,1.6-1.3,2.9-2.9,2.9s-2.9-1.3-2.9-2.9
 S65.5,1,67.1,1l0,0C68.8,1,70,2.3,70,3.9L70,3.9z M7.7,19c0,1.6-1.3,2.9-2.9,2.9C3.3,21.9,2,20.6,2,19s1.2-2.8,2.8-2.9l0,0
@@ -480,7 +513,7 @@ C68.8,31.2,70,32.5,70,34.1L70,34.1z"
 									<path
 										class="st0"
 										d="M7.8,3.9c0,1.6-1.3,2.9-2.9,2.9s-3-1.2-3-2.9S3.1,1,4.7,1l0,0C6.4,1,7.7,2.3,7.8,3.9C7.8,3.8,7.8,3.9,7.8,3.9z
-	M23.3,3.9c0,1.6-1.3,2.9-2.9,2.9s-2.9-1.3-2.9-2.9S18.8,1,20.4,1l0,0C22,1,23.3,2.3,23.3,3.9z M38.8,3.9c0,1.6-1.3,2.9-2.9,2.9
+M23.3,3.9c0,1.6-1.3,2.9-2.9,2.9s-2.9-1.3-2.9-2.9S18.8,1,20.4,1l0,0C22,1,23.3,2.3,23.3,3.9z M38.8,3.9c0,1.6-1.3,2.9-2.9,2.9
 c-1.6,0-2.9-1.3-2.9-2.9S34.3,1,35.9,1l0,0C37.6,1,38.8,2.3,38.8,3.9L38.8,3.9z M54.5,3.9c0,1.6-1.3,2.9-2.9,2.9
 c-1.6,0-2.9-1.3-2.9-2.9S49.9,1,51.5,1l0,0C53.1,1,54.5,2.3,54.5,3.9L54.5,3.9z M70,3.9c0,1.6-1.3,2.9-2.9,2.9s-2.9-1.3-2.9-2.9
 S65.5,1,67.1,1l0,0C68.8,1,70,2.3,70,3.9L70,3.9z M7.7,19c0,1.6-1.3,2.9-2.9,2.9C3.3,21.9,2,20.6,2,19s1.2-2.8,2.8-2.9l0,0
@@ -578,7 +611,7 @@ C68.8,31.2,70,32.5,70,34.1L70,34.1z"
 									<path
 										class="st0"
 										d="M7.8,3.9c0,1.6-1.3,2.9-2.9,2.9s-3-1.2-3-2.9S3.1,1,4.7,1l0,0C6.4,1,7.7,2.3,7.8,3.9C7.8,3.8,7.8,3.9,7.8,3.9z
-	M23.3,3.9c0,1.6-1.3,2.9-2.9,2.9s-2.9-1.3-2.9-2.9S18.8,1,20.4,1l0,0C22,1,23.3,2.3,23.3,3.9z M38.8,3.9c0,1.6-1.3,2.9-2.9,2.9
+M23.3,3.9c0,1.6-1.3,2.9-2.9,2.9s-2.9-1.3-2.9-2.9S18.8,1,20.4,1l0,0C22,1,23.3,2.3,23.3,3.9z M38.8,3.9c0,1.6-1.3,2.9-2.9,2.9
 c-1.6,0-2.9-1.3-2.9-2.9S34.3,1,35.9,1l0,0C37.6,1,38.8,2.3,38.8,3.9L38.8,3.9z M54.5,3.9c0,1.6-1.3,2.9-2.9,2.9
 c-1.6,0-2.9-1.3-2.9-2.9S49.9,1,51.5,1l0,0C53.1,1,54.5,2.3,54.5,3.9L54.5,3.9z M70,3.9c0,1.6-1.3,2.9-2.9,2.9s-2.9-1.3-2.9-2.9
 S65.5,1,67.1,1l0,0C68.8,1,70,2.3,70,3.9L70,3.9z M7.7,19c0,1.6-1.3,2.9-2.9,2.9C3.3,21.9,2,20.6,2,19s1.2-2.8,2.8-2.9l0,0
@@ -676,7 +709,7 @@ C68.8,31.2,70,32.5,70,34.1L70,34.1z"
 									<path
 										class="st0"
 										d="M7.8,3.9c0,1.6-1.3,2.9-2.9,2.9s-3-1.2-3-2.9S3.1,1,4.7,1l0,0C6.4,1,7.7,2.3,7.8,3.9C7.8,3.8,7.8,3.9,7.8,3.9z
-	M23.3,3.9c0,1.6-1.3,2.9-2.9,2.9s-2.9-1.3-2.9-2.9S18.8,1,20.4,1l0,0C22,1,23.3,2.3,23.3,3.9z M38.8,3.9c0,1.6-1.3,2.9-2.9,2.9
+M23.3,3.9c0,1.6-1.3,2.9-2.9,2.9s-2.9-1.3-2.9-2.9S18.8,1,20.4,1l0,0C22,1,23.3,2.3,23.3,3.9z M38.8,3.9c0,1.6-1.3,2.9-2.9,2.9
 c-1.6,0-2.9-1.3-2.9-2.9S34.3,1,35.9,1l0,0C37.6,1,38.8,2.3,38.8,3.9L38.8,3.9z M54.5,3.9c0,1.6-1.3,2.9-2.9,2.9
 c-1.6,0-2.9-1.3-2.9-2.9S49.9,1,51.5,1l0,0C53.1,1,54.5,2.3,54.5,3.9L54.5,3.9z M70,3.9c0,1.6-1.3,2.9-2.9,2.9s-2.9-1.3-2.9-2.9
 S65.5,1,67.1,1l0,0C68.8,1,70,2.3,70,3.9L70,3.9z M7.7,19c0,1.6-1.3,2.9-2.9,2.9C3.3,21.9,2,20.6,2,19s1.2-2.8,2.8-2.9l0,0
@@ -753,81 +786,6 @@ C68.8,31.2,70,32.5,70,34.1L70,34.1z"
 			</div>
 		</div>
 	</section>
-
-	<section id="testimonial" class="testimonial-7">
-		<div class="container">
-			<div class="testimonial-slider-head">
-				<div class="testimonial-slider">
-					<div class="single-testimonial">
-						<div class="row align-items-center">
-							<div class="col-lg-7 col-md-7 col-12">
-								<div class="testimonial-content">
-									<i class="lni lni-quotation"></i>
-									<h2>
-										We move at a fast <br />pace. I’m always working <br />on something I'am
-										excited about!
-									</h2>
-									<div class="bottom">
-										<h4 class="name">Martin Oslo <span>Product Designer</span></h4>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 col-md-5 col-12">
-								<div class="testimonial-image">
-									<img src="assets/images/testimonial/author-1.jpg" alt="Author" />
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="single-testimonial">
-						<div class="row align-items-center">
-							<div class="col-lg-7 col-md-7 col-12">
-								<div class="testimonial-content">
-									<i class="lni lni-quotation"></i>
-									<h2>
-										We move at a fast <br />pace. I’m always working <br />on something I'am
-										excited about!
-									</h2>
-									<div class="bottom">
-										<h4 class="name">Zaklin lee <span>Graphics Designer</span></h4>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 col-md-5 col-12">
-								<div class="testimonial-image">
-									<img src="assets/images/testimonial/author-2.jpg" alt="Author" />
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="single-testimonial">
-						<div class="row align-items-center">
-							<div class="col-lg-7 col-md-7 col-12">
-								<div class="testimonial-content">
-									<i class="lni lni-quotation"></i>
-									<h2>
-										We move at a fast <br />pace. I’m always working <br />on something I'am
-										excited about!
-									</h2>
-									<div class="bottom">
-										<h4 class="name">Gerina pic <span>Website Designer</span></h4>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-5 col-md-5 col-12">
-								<div class="testimonial-image">
-									<img src="assets/images/testimonial/author-3.jpg" alt="Author" />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
 
 	<footer class="footer-area footer-six">
 		<div class="footer-widget">
@@ -942,19 +900,18 @@ C68.8,31.2,70,32.5,70,34.1L70,34.1z"
 		<i class="lni lni-chevron-up"></i>
 	</a>
 
-	<script src="assets/js/bootstrap.bundle.min.js" ></script>
-	<script src="assets/js/glightbox.min.js" ></script>
-	<script src="assets/js/tiny-slider.js" ></script>
-	<script src="assets/js/main.js" ></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/glightbox.min.js"></script>
+	<script src="assets/js/tiny-slider.js"></script>
+	<script src="assets/js/main.js"></script>
 	<script>
-
 		//========= glightbox
 		GLightbox({
-			'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
-			'type': 'video',
-			'source': 'youtube', //vimeo, youtube or local
-			'width': 900,
-			'autoplayVideos': true,
+			href: "https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM",
+			type: "video",
+			source: "youtube", //vimeo, youtube or local
+			width: 900,
+			autoplayVideos: true,
 		});
 
 		//======== Screenshorts Slider
@@ -968,41 +925,22 @@ C68.8,31.2,70,32.5,70,34.1L70,34.1z"
 			nav: true,
 			navPosition: "bottom",
 			speed: 400,
-			controlsText: [
-			'<i class="lni lni-arrow-left"></i>',
-			'<i class="lni lni-arrow-right"></i>',
-			],
+			controlsText: ['<i class="lni lni-arrow-left"></i>', '<i class="lni lni-arrow-right"></i>'],
 			responsive: {
-			0: {
-				items: 1,
-				controls: false,
-			},
+				0: {
+					items: 1,
+					controls: false,
+				},
 
-			768: {
-				items: 3,
-				controls: true,
+				768: {
+					items: 3,
+					controls: true,
+				},
+				992: {
+					items: 4,
+					controls: false,
+				},
 			},
-			992: {
-				items: 4,
-				controls: false,
-			},
-			},
-		});
-
-		//========= testimonial
-		tns({
-			container: ".testimonial-slider",
-			items: 1,
-			autoplay: true,
-			autoplayButtonOutput: false,
-			mouseDrag: true,
-			gutter: 0,
-			nav: false,
-			controls: true,
-			controlsText: [
-			'<i class="lni lni-arrow-left"></i>',
-			'<i class="lni lni-arrow-right"></i>',
-			],
 		});
 	</script>
 </body>
