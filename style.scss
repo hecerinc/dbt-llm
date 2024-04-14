@@ -348,7 +348,7 @@ p {
   Section Title Two CSS
 ===========================*/
 .section-title-two {
-	text-align: center;
+	// text-align: center;
 	max-width: 550px;
 	margin: auto;
 	margin-bottom: 50px;
@@ -876,6 +876,11 @@ p {
 	bottom: 0;
 	width: 100%;
 	height: 500px;
+	svg {
+		vertical-align: bottom;
+		position: absolute;
+		bottom: -1px;
+	}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
 	.header-eleven .shape {
@@ -1070,9 +1075,9 @@ p {
 	}
 }
 .features-twelve .section-title-two {
-	text-align: center;
-	max-width: 1080px;
-	margin: auto;
+	// text-align: center;
+	max-width: initial;
+	// margin: auto;
 	margin-bottom: 50px;
 	position: relative;
 	z-index: 5;
@@ -1126,7 +1131,7 @@ p {
 	z-index: 2;
 	overflow: hidden;
 	transition: all 0.4s ease-in-out;
-	height: 322px;
+	height: 100%;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.features-style-twelve {
@@ -2341,19 +2346,42 @@ p {
 	}
 }
 .proper-text {
+	color: var(--black) !important;
 	p {
+		color: var(--black) !important;
 		margin-bottom: 15px;
 	}
 }
 ul.proper-text li {
 	list-style: disc;
 	margin-left: 20px;
+	&::marker {
+		color: var(--primary-light);
+	}
 }
 .whydbt-section {
 	padding: 100px 0;
 	h2 {
 		font-size: 5rem;
-		color: var(--primary);
+		color: var(--dark-1);
 		text-align: center;
+	}
+}
+.components-section {
+	padding: 100px 0;
+	h2 {
+		margin-bottom: 20px;
+	}
+}
+.acknowledgements-section {
+	padding: 100px 0;
+	h2,
+	p {
+		margin-bottom: 20px;
+	}
+}
+.technology-section {
+	h4 {
+		margin-bottom: 10px;
 	}
 }
