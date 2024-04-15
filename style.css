@@ -919,6 +919,7 @@ p {
   vertical-align: bottom;
   position: absolute;
   bottom: -1px;
+  filter: drop-shadow(-7px -17px 25px rgba(0, 0, 0, 0.1));
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
@@ -2543,6 +2544,14 @@ ul.proper-text li::marker {
   color: var(--dark-1);
   text-align: center;
 }
+.whydbt-section h4 {
+  margin-bottom: 8px;
+}
+.whydbt-section .flex {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
 
 .components-section {
   padding: 100px 0;
@@ -2561,6 +2570,10 @@ ul.proper-text li::marker {
 
 .technology-section h4 {
   margin-bottom: 10px;
+}
+
+.navbar-nav .gh-link i {
+  font-size: 2rem !important;
 }
 
 /*# sourceMappingURL=style.css.map */
