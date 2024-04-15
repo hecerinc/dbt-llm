@@ -367,40 +367,43 @@
                     <div class="call-action-content">
                         <h2 class="action-title">Technology &amp; Architecture</h2>
                         <p class="text">
-                            Let's explore how we developed Berkeley DBT into a comprehensive platform for end-to-end
-                            DBT chatbot performance testing.
+                          Let's explore how we developed Berkeley DBT into a comprehensive platform for end-to-end DBT chatbot performance testing.
                         </p>
                         <h4>Conversation Generation</h4>
                         <p class="text">
-                            At the core of DBT skills training, interaction between a competent trainer and an
-                            enthusiastic learner is crucial. We replicate this dynamic duo with two advanced AI
-                            constructs: a DBT Skills Trainer Bot and a Patient Bot.
+                          At its core, DBT skills training is all about the dynamic between a skills trainer, who
+                          imparts essential coping techniques, and a skills training client, who actively engages in
+                          learning and applying these methods to their own emotional and interpersonal challenges.
+                          We replicate this duo with two AI constructs: a DBT Skills Trainer Bot and a Patient Bot.
                         </p>
                         <p class="text">
-                            Our DBT Skills Trainer Bot utilizes system prompting to condition GPT-4 into delivering
-                            contextually and stylistically appropriate responses. With careful prompt tuning, it can
-                            be made to open conversations with a warm greeting, probe the user's current emotional
-                            state, select a relevant DBT skill to teach based on the user's immediate needs, and
-                            beyond.
-                        </p>
-                        <p class="text">
-                            Complementing this, our Patient Bot simulates the learner's role. It begins each session
-                            with one of 81 pre-written starting messages describing various real-life challenges
-                            relevant to DBT. Via system prompting, GPT-4 is directed to generate new responses from
-                            the same perspective.
-                        </p>
-                        <p class="text">
-                            Together, these two bots engage in a simulated multi-turn conversation before the
-                            resulting synthetic conversations are passed through our evaluation process.
+                          Our DBT Skills Trainer Bot, DeeBoT, utilizes a custom-tailored system prompt taking GPT-4
+                          from "general-purpose AI" to "DBT-focused guide". This customization enables DeeBoT to
+                          initiate interactions with a friendly greeting, assess the user's emotional state, and
+                          choose the appropriate skill to teach based on the user’s needs.
+                          Playing the part of a DeeBoT user is our Patient Bot. Given one of 81 pre-written starting
+                          messages capturing various challenges a skills training client may face, Patient Bot is directed via system prompt
+                          to continue the conversation from their perspective. Together, these two bots engage in a
+                          simulated multi-turn conversation before the resulting synthetic conversation is passed through our evaluation process.
                         </p>
                         <h4>Evaluation</h4>
                         <p class="text">
-                            Sit sunt sed architecto aliquam nesciunt. Hic est excepturi ipsam soluta minima Eveniet
-                            aspernatur rem expedita impedit cumque, explicabo ab! Quaerat molestiae quo enim
-                            temporibus illo Quaerat dignissimos expedita libero enim praesentium quam Tempora sed
-                            amet dolorum quibusdam consequatur. Nesciunt itaque veniam natus veniam minima molestiae
-                            illum atque Consequuntur sequi sapiente tempore distinctio ex! Repellat quam eveniet
-                            cupiditate
+                          To ensure that DeeBoT adheres to established quality-of-care standards, we employed the
+                          <a href="https://www.dbtadherence.com/about-dbt-aci">DBT Adherence Checklist for Individual Therapy (DBT AC-I)</a>.
+                          This tool assesses a therapy session's structure, strategy use, stylistic approach, and
+                          skill teaching effectiveness to verify compliance with the DBT model.
+                          Out of the 26 individual standards outlined in the DBT AC-I, we selected 23 that were
+                          relevant in a text-only context. We then converted each of these into a system prompt
+                          that enables GPT-4 to analyze a conversation and assign a binary rating:
+                          "0" for non-adherence and "1" for adherence to each standard.
+                        </p>
+                        <p class="text">
+                          To assess the relevance and accuracy of the skills DeeBoT recommends during interactions,
+                          we created a database using regular expressions to identify which of the 46 DBT skills
+                          listed in the DBT Skills Training Manual appear in a conversation.
+                          After identifying the skills present, we compare them to the set we aimed to target for each specific user.
+                          Ideally, DeeBoT's recommendations should directly match the targeted skills,
+                          but if there is alignment with a closely related skill, it's still a good sign that DeeBoT was on the right track.
                         </p>
                     </div>
                 </div>
