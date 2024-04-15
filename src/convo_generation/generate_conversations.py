@@ -26,27 +26,25 @@ DEBUG = True if DEBUG.lower() == 'true' else False
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-f', '--prompt-file', required=False) # ROB NOTE: NOT REQUIRED - HARDCODED PROMPT FILE TO SEED PROMPTS
 
-# For testing, limit the # of conversations generated
+# For testing, limit the number of conversations generated
 parser.add_argument('-l', '--limit', required=False)
+# Limit the number of messages per conversation
+parser.add_argument('-n', '--n_msgs', required=False, default=10)
 parser.add_argument('-o', '--output', required=False, default='result.pickle')
-
 
 args = parser.parse_args()
 
-uprompt_file = args.prompt_file
-outfile = args.output
 convo_limit = int(args.limit) if args.limit else None
+convo_n_msgs = int(args.n_msgs) if args.n_msgs else None
+outfile = os.path.join('output', args.output)
+
 
 pipeline_run_time_utc = datetime.utcnow()
 run_id = pipeline_run_time_utc.strftime('%Y%m%dT%H%M%S')
 
-CONVERSATION_MESSAGE_LIMIT = 10
-
 assert OPENAI_API_KEY is not None, 'OpenAI API Key must be present in env variables'
-
-oai_endpoint = os.getenv('OAI_ENDPOINT', 'dbt-openai-usea2-assistants')
+oai_endpoint = os.getenv('OAI_ENDPOINT')
 
 # Connect to OpenAI model
 openai_client = AzureOpenAI(
@@ -54,22 +52,17 @@ openai_client = AzureOpenAI(
     api_version = "2023-05-15",
     azure_endpoint = f"https://{oai_endpoint}.openai.azure.com/"
 )
-subscription_id = '8048e16e-5368-4d28-8d68-657559f557e7'
-resource_group = 'dbt-rg-openai'
-workspace_name = 'berkeley_dbt'
 
-
-with open(os.path.join('../prompts', 'dbt_system.prompt'), 'r', encoding='utf-8') as f:
+with open(os.path.join('..', 'prompts', 'dbt_system.prompt'), 'r', encoding='utf-8') as f:
     dbt_system_prompt = f.read()
 
-with open(os.path.join('../prompts', 'user_impersonation.prompt'), 'r', encoding='utf-8') as f:
+with open(os.path.join('..', 'prompts', 'user_impersonation.prompt'), 'r', encoding='utf-8') as f:
     persona_prompt = f.read()
 
 
 
-
 def simulate_conversation(initial_prompt: str):
-    st = SimThread(openai_client, dbt_system_prompt, None, persona_prompt, initial_prompt, 'dbt', CONVERSATION_MESSAGE_LIMIT, 10000)
+    st = SimThread(openai_client, dbt_system_prompt, None, persona_prompt, initial_prompt, 'dbt', convo_n_msgs, 10000)
     st.run_thread(verbose=DEBUG)
     # st.extend_thread(4, verbose=True)
     return st
@@ -79,7 +72,7 @@ def main():
     # Get the input prompts
     logger.info('Reading unique prompts')
 
-    seed_prompts = pd.read_csv('../data/prompts_2.tsv', delimiter='\t')
+    seed_prompts = pd.read_csv('../data/prompts_with_ids.tsv', delimiter='\t')
     convo_ids = list(seed_prompts['id'])
     seed_prompts = list(seed_prompts['Initial Message'])
 
@@ -128,17 +121,9 @@ def main():
             logger.error(f'Failed to process prompt {i+1}')
             logger.exception(e)
 
-        # st_eval_txt = st.msgs_to_eval() # this is what then gets passed to the evaluation prompt
-        # with open(f'{run_id}_result_console.txt', 'w', encoding='utf-8') as f:
-        #     print(st.msgs_to_console(), file=f)
-        # with open(f'{run_id}_result_eval.txt', 'w', encoding='utf-8') as f:
-        #     print(st_eval_txt, file=f)
-
     with open(outfile, 'wb') as f:
         pickle.dump(results, f)
     logger.info('Done')
-# print(st.msgs_to_console())
-# print(st_eval_txt)
 
 
 if __name__ == '__main__':
